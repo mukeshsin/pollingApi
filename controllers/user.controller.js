@@ -4,6 +4,7 @@ import User from "../models/user.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
+//user Register
 export const userRegister = async (req, res) => {
   const salt = await bcrypt.genSalt();
   const hashedPassword = await bcrypt.hash(req.body.password, salt);
@@ -26,6 +27,7 @@ export const userRegister = async (req, res) => {
   }
 };
 
+// user Login
 export const userLogin = async (req, res) => {
   try {
     const { emailId, password } = req.body;
@@ -50,5 +52,83 @@ export const userLogin = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
+  }
+};
+
+//create User
+export const createUser = async (req, res) => {
+  try {
+    const salt = await bcrypt.genSalt();
+    const hashedPassword = await bcrypt.hash(req.body.password, salt);
+    await User.create(req.body);
+    res.status(200).send({ message: "user created successfully" });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({ message: "500 error to the user" });
+  }
+};
+
+//user List
+export const userList = async (req, res) => {
+  try {
+    const users = await User.findAll();
+    console.log(users);
+    res.status(200).send(users);
+  } catch (error) {
+    res.status(500).send({
+      message: "500 error to the user",
+    });
+  }
+};
+
+//get user by id
+
+export const getUserById = async (req, res) => {
+  try {
+    const users = await User.findOne({
+      where: {
+        id: req.params.id,
+      },
+    });
+    console.log(users);
+    res.status(200).send(users);
+  } catch (error) {
+    res.status(500).send({
+      message: "500 error to the user",
+    });
+  }
+};
+
+export const updateUser = async (req, res) => {
+  try {
+    await User.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    });
+    res.status(200).send({
+      message: "User updated",
+    });
+  } catch (error) {
+    res.status(500).send({
+      message: "500 error to the user",
+    });
+  }
+};
+
+export const deleteUser = async (req, res) => {
+  try {
+    await User.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    res.status(200).send({
+      message: "User Deleted",
+    });
+  } catch (error) {
+    res.status(500).send({
+      message: "500 error to the user",
+    });
   }
 };
