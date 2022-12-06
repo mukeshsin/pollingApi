@@ -8,6 +8,12 @@ import{
     deleteRole
 } from "../controllers/role.controller.js";
 
+
+import{
+    userRegister
+
+} from"../controllers/user.controller.js";
+
 const router = express.Router();
 
 
@@ -17,6 +23,8 @@ router.get("/role/:id", getRoleById);
 router.put("/role/edit/:id", updateRole);
 router.delete("/role/delete/:id", deleteRole);
 
+//user register
+router.post("/user/register",userRegister);
 
 
 export default router;
