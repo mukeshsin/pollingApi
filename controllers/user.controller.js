@@ -21,8 +21,9 @@ export const userRegister = async (req, res) => {
       message: "User register successful",
     });
   } catch (error) {
+    console.log(error);
     res.status(500).send({
-      message: "500 error to the user",
+      message: error,
     });
   }
 };
@@ -43,21 +44,23 @@ export const userLogin = async (req, res) => {
       },
     });
     if (!user) {
-      res.status(400).json({ error: "user error" });
+      res.status(400).json({ message: "user data not found" });
     } else {
       let token = jwt.sign({ id: user.id }, process.env.JWT_SECRET_KEY, {
-        expiresIn: "1hr",
+        expiresIn: process.env.expire,
       });
-      return res.status(200).send({ user, token: token });
+      return res.status(200).send({ user, token });
     }
   } catch (error) {
     console.log(error);
+    res.status(500).send({ message: "500 error to the user" });
   }
 };
 
 //create User
 export const createUser = async (req, res) => {
   try {
+    console.log("createUser");
     const salt = await bcrypt.genSalt();
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
     await User.create(req.body);
@@ -67,12 +70,13 @@ export const createUser = async (req, res) => {
     res.status(500).send({ message: "500 error to the user" });
   }
 };
-
-//user List
-export const userList = async (req, res) => {
+// users list by page no.
+export const getUsersListByPage = async (req, res) => {
   try {
-    const users = await User.findAll();
-    console.log(users);
+    const users = await User.findAndCountAll({
+      limit: parseInt(req.query.limit),
+      offset: (req.params.page - 1) * parseInt(req.query.limit),
+    });
     res.status(200).send(users);
   } catch (error) {
     res.status(500).send({
@@ -82,16 +86,14 @@ export const userList = async (req, res) => {
 };
 
 //get user by id
-
 export const getUserById = async (req, res) => {
   try {
-    const users = await User.findOne({
+    const user = await User.findOne({
       where: {
         id: req.params.id,
       },
     });
-    console.log(users);
-    res.status(200).send(users);
+    res.status(200).send(user);
   } catch (error) {
     res.status(500).send({
       message: "500 error to the user",

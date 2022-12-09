@@ -1,5 +1,6 @@
 import express from "express";
 
+//role crud operation
 import {
   createRole,
   roleList,
@@ -11,37 +12,47 @@ import {
 // user register and user login
 import { userRegister, userLogin } from "../controllers/user.controller.js";
 
-//user create
+//user crud operation
+import {
+  createUser,
+  getUsersListByPage,
+  getUserById,
+  updateUser,
+  deleteUser,
+} from "../controllers/user.controller.js";
 
-import{createUser,userList,getUserById,updateUser,deleteUser} from"../controllers/user.controller.js";
-import {  validateJwtToken } from "../middleware.js";
+//import middleware
+import { validateJwtToken } from "../middleware.js";
+import { validateUserData, validateRoleData, validate } from "../middleware.js";
 
-
-
-
+//Define router
 const router = express.Router();
-router.post("/role/add", createRole);
+
+//routes for role
+router.post("/role/add", [validateRoleData(), validate], createRole);
 router.get("/role/list", roleList);
 router.get("/role/:id", getRoleById);
-router.put("/role/edit/:id", updateRole);
+router.put("/role/edit/:id", [validateRoleData(), validate], updateRole);
 router.delete("/role/delete/:id", deleteRole);
 
-//user register
-router.post("/user/register", userRegister);
-
-//user login
+//routes for user
+router.post("/user/register", [validateUserData(), validate], userRegister);
 router.post("/user/login", userLogin);
-
-//user create
-router.post("/user/create",validateJwtToken,createUser);
-
-//user list
-router.get("/user/list",validateJwtToken,userList);
-
-// user List by Id
-router.get("/user/:id",validateJwtToken,getUserById);
-
-router.put("/user/:id", validateJwtToken,updateUser);
-router.delete("/user/:id",validateJwtToken, deleteUser);
+router.post(
+  "/user/create",
+  validateJwtToken,
+  [validateUserData(), validate],
+  createUser
+);
+router.get("/user/list/:page", validateJwtToken, getUsersListByPage);
+router.get("/user/:id", validateJwtToken, getUserById);
+router.put(
+  "/user/:id",
+  validateJwtToken,
+  validateUserData(),
+  validate,
+  updateUser
+);
+router.delete("/user/:id", validateJwtToken, deleteUser);
 
 export default router;
