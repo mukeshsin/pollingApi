@@ -12,7 +12,6 @@ export const createRole = async (req, res) => {
 export const roleList = async (req, res) => {
   try {
     const roles = await Role.findAll();
-    console.log(roles);
     res.status(200).send(roles);
   } catch (error) {
     res.status(500).send({

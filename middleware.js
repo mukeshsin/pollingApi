@@ -28,7 +28,7 @@ export const validateUserData = () => {
     check("lastName")
       .isLength({ min: 4 })
       .withMessage("lastName must be contain 4 character"),
-    check("emailId")
+    check("email")
       .isEmail()
       .normalizeEmail()
       .withMessage("please enter a valid email"),

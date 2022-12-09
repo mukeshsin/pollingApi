@@ -17,5 +17,4 @@ const db = new Sequelize(
     },
   }
 );
-await db.sync({ alter: true });
 export default db;

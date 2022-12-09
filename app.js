@@ -2,6 +2,7 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
 import db from "./config/db.config.js";
+await db.sync({ alter: true });
 import Router from "./routes/routes.js";
 const app = express();
 app.use(logger("dev"));

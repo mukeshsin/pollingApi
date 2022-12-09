@@ -13,7 +13,7 @@ export const userRegister = async (req, res) => {
       password: hashedPassword,
       firstName: req.body.firstName,
       lastName: req.body.lastName,
-      emailId: req.body.emailId,
+      email: req.body.email,
       roleId: req.body.roleId,
     });
 
@@ -31,15 +31,15 @@ export const userRegister = async (req, res) => {
 // user Login
 export const userLogin = async (req, res) => {
   try {
-    const { emailId, password } = req.body;
-    if (!emailId || !password) {
+    const { email, password } = req.body;
+    if (!email || !password) {
       res.status(401).send({ message: "please fill the information" });
     }
     const salt = await bcrypt.genSalt();
     const hashedPassword = await bcrypt.compare(req.body.password, salt);
     const user = await User.findOne({
       where: {
-        emailId: emailId,
+        email: email,
         password: hashedPassword,
       },
     });
@@ -60,7 +60,6 @@ export const userLogin = async (req, res) => {
 //create User
 export const createUser = async (req, res) => {
   try {
-    console.log("createUser");
     const salt = await bcrypt.genSalt();
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
     await User.create(req.body);
