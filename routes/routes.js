@@ -19,11 +19,15 @@ import {
   getUserById,
   updateUser,
   deleteUser,
+  userMyProfile,
 } from "../controllers/user.controller.js";
 
 //import middleware
 import { validateJwtToken } from "../middleware.js";
 import { validateUserData, validateRoleData, validate } from "../middleware.js";
+
+//poll crud operation
+ import {createPoll}from "../controllers/poll.controller.js";
 
 //Define router
 const router = express.Router();
@@ -54,5 +58,10 @@ router.put(
   updateUser
 );
 router.delete("/user/:id", validateJwtToken, deleteUser);
+router.get("/user/own/profile", validateJwtToken, userMyProfile);
+
+
+//routes for poll
+router.post("/poll/add",createPoll);
 
 export default router;

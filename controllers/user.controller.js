@@ -133,3 +133,16 @@ export const deleteUser = async (req, res) => {
     });
   }
 };
+
+export const userMyProfile = async (req, res) => {
+  try {
+    const user = await User.findOne({ where: { id: req.body.userId } });
+    console.log(user);
+    res.status(200).send(user);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      message: "500 error to the user",
+    });
+  }
+};
