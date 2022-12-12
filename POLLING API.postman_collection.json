@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"p\",\r\n    \"description\":\"The\"\r\n}",
+							"raw": "{\r\n    \"name\":\"ca\",\r\n    \"description\":\"A chartered accountant (CA) is an international accounting designation granted to accounting professionals in many countries around the world, aside from the United States..\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -93,7 +93,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/role/edit/5",
+							"raw": "http://localhost:3000/role/edit/6",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -102,7 +102,7 @@
 							"path": [
 								"role",
 								"edit",
-								"5"
+								"6"
 							]
 						}
 					},
@@ -141,7 +141,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"password\":\"inno12345\",\r\n    \"firstName\":\"mohan\",\r\n    \"lastName\":\"kumar\",\r\n    \"email\":\"mohan123456@gmail.com\",\r\n    \"roleId\":5\r\n}",
+							"raw": "{\r\n    \"password\":\"inno2020\",\r\n    \"firstName\":\"amit\",\r\n    \"lastName\":\"singh\",\r\n    \"email\":\"amitsingh12@gmail.com\",\r\n    \"roleId\":7\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -170,7 +170,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\":\"mohan123456@gmail.com\",\r\n    \"password\":\"inno12345\"\r\n}",
+							"raw": "{\r\n    \"email\":\"amit1@gmail.com\",\r\n    \"password\":\"inno2020\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -199,13 +199,13 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImlhdCI6MTY3MDU2OTUyMywiZXhwIjoxNjcwNTczMTIzfQ.XD8V3OIPesIJBoJUMmIYnFSO6ZdcyMa5ZT5Q8FZYkHs",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwODI2NDc1LCJleHAiOjE2NzA4MzAwNzV9.19TySuhdH0nAsDRcD-0GGqNtRUtQsdj2ze8xuvGY3HQ",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"password\":\"inno1234\",\r\n    \"firstName\":\"mohan\",\r\n    \"lastName\":\"kumar\",\r\n    \"email\":\"reena1@gmail.com\",\r\n    \"roleId\":1\r\n}",
+							"raw": "{\r\n    \"password\":\"inno2020\",\r\n    \"firstName\":\"neha\",\r\n    \"lastName\":\"singh\",\r\n    \"email\":\"neha1@gmail.com\",\r\n    \"roleId\":1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -234,7 +234,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImlhdCI6MTY3MDU2OTUyMywiZXhwIjoxNjcwNTczMTIzfQ.XD8V3OIPesIJBoJUMmIYnFSO6ZdcyMa5ZT5Q8FZYkHs",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwODI3MDM1LCJleHAiOjE2NzA4MzA2MzV9.JyQ9Jk_i0hlzDLh4PP0A4ddD7GGmFSWUwQYyDrbcbfQ",
 								"type": "text"
 							}
 						],
@@ -267,12 +267,12 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImlhdCI6MTY3MDU2OTUyMywiZXhwIjoxNjcwNTczMTIzfQ.XD8V3OIPesIJBoJUMmIYnFSO6ZdcyMa5ZT5Q8FZYkHs",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwODI3MDM1LCJleHAiOjE2NzA4MzA2MzV9.JyQ9Jk_i0hlzDLh4PP0A4ddD7GGmFSWUwQYyDrbcbfQ",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/user/10",
+							"raw": "http://localhost:3000/user/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -280,7 +280,7 @@
 							"port": "3000",
 							"path": [
 								"user",
-								"10"
+								"1"
 							]
 						}
 					},
@@ -293,10 +293,14 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImlhdCI6MTY3MDU2OTUyMywiZXhwIjoxNjcwNTczMTIzfQ.XD8V3OIPesIJBoJUMmIYnFSO6ZdcyMa5ZT5Q8FZYkHs",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwODI2NDc1LCJleHAiOjE2NzA4MzAwNzV9.19TySuhdH0nAsDRcD-0GGqNtRUtQsdj2ze8xuvGY3HQ",
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:3000/user/15",
 							"protocol": "http",
@@ -307,6 +311,45 @@
 							"path": [
 								"user",
 								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userOwnProfile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwODI3MDM1LCJleHAiOjE2NzA4MzA2MzV9.JyQ9Jk_i0hlzDLh4PP0A4ddD7GGmFSWUwQYyDrbcbfQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/own/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"own",
+								"profile"
 							]
 						}
 					},

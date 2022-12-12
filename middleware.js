@@ -11,7 +11,7 @@ export const validateJwtToken = async (req, res, next) => {
     if (err) {
       res.status(400).send({ message: "unauthorised token expire" });
     } else {
-      req.body['userId'] = user.id
+      req.body["userId"] = user.id;
       next();
     }
   });

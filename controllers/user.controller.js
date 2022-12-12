@@ -60,9 +60,9 @@ export const userLogin = async (req, res) => {
 //create User
 export const createUser = async (req, res) => {
   try {
+    await User.create(req.body);
     const salt = await bcrypt.genSalt();
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
-    await User.create(req.body);
     res.status(200).send({ message: "user created successfully" });
   } catch (error) {
     console.log(error);
@@ -136,7 +136,11 @@ export const deleteUser = async (req, res) => {
 
 export const userMyProfile = async (req, res) => {
   try {
-    const user = await User.findOne({ where: { id: req.body.userId } });
+    const user = await User.findOne({
+      where: { id: req.body.userId },
+      attributes: ["id", "firstName", "lastName", "email"],
+    });
+
     console.log(user);
     res.status(200).send(user);
   } catch (error) {
