@@ -2,7 +2,7 @@
 import { Sequelize } from "sequelize";
 // import connection
 import db from "../config/db.config.js";
-import Option from "./option.js";
+import Poll from "./poll.js";
 const { DataTypes } = Sequelize;
 // table define
 const Option = db.define("options", {
@@ -11,7 +11,7 @@ const Option = db.define("options", {
     allowNull: false,
   },
   voteCount: {
-    type: DataTypes.STRING,
+    type: DataTypes.NUMBER,
     allowNull: false,
   },
   userId: {
@@ -19,7 +19,7 @@ const Option = db.define("options", {
     allowNull: false,
   },
 
-  pollId: {
+  createdBy: {
     type: DataTypes.INTEGER,
     allownull: false,
     references: {

@@ -359,7 +359,162 @@
 		},
 		{
 			"name": "Polls",
-			"item": []
+			"item": [
+				{
+					"name": "poll add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"What is your\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/poll/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"poll",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get list poll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwODQzNzcyLCJleHAiOjE2NzA4NDczNzJ9.DMPqbtCl8aHm4lHrG_cYmRFiG2XRgdBIjen9gkhrRxA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/poll/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"poll",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single poll",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwODQzNzcyLCJleHAiOjE2NzA4NDczNzJ9.DMPqbtCl8aHm4lHrG_cYmRFiG2XRgdBIjen9gkhrRxA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/poll/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"poll",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update poll",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwODQ3ODA4LCJleHAiOjE2NzA4NTE0MDh9.4Qm9xIyQwB5TbtvfskrgTyDgHh8fWJDduz5PU257FC0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\":\"what is your favourite actor\",\r\n\"createdBy\":1}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/poll/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"poll",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete poll",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwODQ3ODA4LCJleHAiOjE2NzA4NTE0MDh9.4Qm9xIyQwB5TbtvfskrgTyDgHh8fWJDduz5PU257FC0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/poll/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"poll",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

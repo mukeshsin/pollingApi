@@ -140,8 +140,6 @@ export const userMyProfile = async (req, res) => {
       where: { id: req.body.userId },
       attributes: ["id", "firstName", "lastName", "email"],
     });
-
-    console.log(user);
     res.status(200).send(user);
   } catch (error) {
     console.log(error);
