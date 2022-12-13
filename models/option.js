@@ -2,29 +2,27 @@
 import { Sequelize } from "sequelize";
 // import connection
 import db from "../config/db.config.js";
-import Poll from "./poll.js";
+import User from "./user.js";
 const { DataTypes } = Sequelize;
 // table define
 const Option = db.define("options", {
   optionTitle: {
     type: DataTypes.STRING,
-    allowNull: false,
-  },
-  voteCount: {
-    type: DataTypes.NUMBER,
-    allowNull: false,
-  },
-  userId: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  },
-
-  createdBy: {
-    type: DataTypes.INTEGER,
     allownull: false,
-    references: {
-      model: Poll,
-      key: "id",
+    validate: {
+      min: 2,
+      max: 3,
+    },
+    pollId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    createdBy: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: User,
+        key: "id",
+      },
     },
   },
 });

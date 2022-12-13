@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"ca\",\r\n    \"description\":\"A chartered accountant (CA) is an international accounting designation granted to accounting professionals in many countries around the world, aside from the United States..\"\r\n}",
+							"raw": "{\r\n    \"name\":\"Clerk\",\r\n    \"description\":\"A Clerk, or Bookkeeper, is responsible for performing administrative tasks to support daily business operations. \"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -93,7 +93,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/role/edit/6",
+							"raw": "http://localhost:3000/role/edit/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -102,7 +102,7 @@
 							"path": [
 								"role",
 								"edit",
-								"6"
+								"5"
 							]
 						}
 					},
@@ -141,7 +141,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"password\":\"inno2020\",\r\n    \"firstName\":\"amit\",\r\n    \"lastName\":\"singh\",\r\n    \"email\":\"amitsingh12@gmail.com\",\r\n    \"roleId\":7\r\n}",
+							"raw": "{\r\n    \"password\":\"inno2020\",\r\n    \"firstName\":\"amit\",\r\n    \"lastName\":\"singh\",\r\n    \"email\":\"amitsingh12345@gmail.com\",\r\n    \"roleId\":5\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -170,7 +170,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\":\"amit1@gmail.com\",\r\n    \"password\":\"inno2020\"\r\n}",
+							"raw": "{\r\n    \"email\":\"amitsingh12345@gmail.com\",\r\n    \"password\":\"inno2020\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -199,7 +199,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwODI2NDc1LCJleHAiOjE2NzA4MzAwNzV9.19TySuhdH0nAsDRcD-0GGqNtRUtQsdj2ze8xuvGY3HQ",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjcwOTIxNTgxLCJleHAiOjE2NzA5MjUxODF9.0BoDgeXfg2EkyZePL4Uog0WbVzURZ5ZAqpSw3-1uix8",
 								"type": "text"
 							}
 						],
@@ -234,7 +234,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwODI3MDM1LCJleHAiOjE2NzA4MzA2MzV9.JyQ9Jk_i0hlzDLh4PP0A4ddD7GGmFSWUwQYyDrbcbfQ",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwOTM3MTM1LCJleHAiOjE2NzA5NDA3MzV9.8_fbnJh0FC6WT-FIzHKqrGr8785w8hPrDEHR7xA5_1k",
 								"type": "text"
 							}
 						],
@@ -267,7 +267,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwODI3MDM1LCJleHAiOjE2NzA4MzA2MzV9.JyQ9Jk_i0hlzDLh4PP0A4ddD7GGmFSWUwQYyDrbcbfQ",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwOTM3MTM1LCJleHAiOjE2NzA5NDA3MzV9.8_fbnJh0FC6WT-FIzHKqrGr8785w8hPrDEHR7xA5_1k",
 								"type": "text"
 							}
 						],
@@ -293,7 +293,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwODI2NDc1LCJleHAiOjE2NzA4MzAwNzV9.19TySuhdH0nAsDRcD-0GGqNtRUtQsdj2ze8xuvGY3HQ",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjcwOTIxNTgxLCJleHAiOjE2NzA5MjUxODF9.0BoDgeXfg2EkyZePL4Uog0WbVzURZ5ZAqpSw3-1uix8",
 								"type": "text"
 							}
 						],
@@ -302,7 +302,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:3000/user/15",
+							"raw": "http://localhost:3000/user/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -310,7 +310,7 @@
 							"port": "3000",
 							"path": [
 								"user",
-								"15"
+								"1"
 							]
 						}
 					},
@@ -326,7 +326,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwODI3MDM1LCJleHAiOjE2NzA4MzA2MzV9.JyQ9Jk_i0hlzDLh4PP0A4ddD7GGmFSWUwQYyDrbcbfQ",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwOTM3MTM1LCJleHAiOjE2NzA5NDA3MzV9.8_fbnJh0FC6WT-FIzHKqrGr8785w8hPrDEHR7xA5_1k",
 								"type": "text"
 							}
 						],
@@ -364,10 +364,16 @@
 					"name": "poll add",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNjcwOTM3ODAyLCJleHAiOjE2NzA5NDE0MDJ9.XPtGjfHOaeVxHU9afUhLJ6IDqZ5OFIl_3q2-Kcn1dAU",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\":\"What is your\"\r\n    \r\n}",
+							"raw": "{\r\n    \"title\":\"What is your favourite color?\"\r\n  \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -399,7 +405,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwODQzNzcyLCJleHAiOjE2NzA4NDczNzJ9.DMPqbtCl8aHm4lHrG_cYmRFiG2XRgdBIjen9gkhrRxA",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNjcwOTM3ODAyLCJleHAiOjE2NzA5NDE0MDJ9.XPtGjfHOaeVxHU9afUhLJ6IDqZ5OFIl_3q2-Kcn1dAU",
 								"type": "text"
 							}
 						],
@@ -434,12 +440,12 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwODQzNzcyLCJleHAiOjE2NzA4NDczNzJ9.DMPqbtCl8aHm4lHrG_cYmRFiG2XRgdBIjen9gkhrRxA",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNjcwOTM3ODAyLCJleHAiOjE2NzA5NDE0MDJ9.XPtGjfHOaeVxHU9afUhLJ6IDqZ5OFIl_3q2-Kcn1dAU",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/poll/3",
+							"raw": "http://localhost:3000/poll/4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -447,7 +453,7 @@
 							"port": "3000",
 							"path": [
 								"poll",
-								"3"
+								"4"
 							]
 						}
 					},
@@ -515,6 +521,10 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "option",
+			"item": []
 		}
 	]
 }

@@ -67,6 +67,5 @@ export const valiadatePollData = () => {
     check("title")
       .isLength({ min: 8 })
       .withMessage("title must be contain atleast 8  character more"),
-    check("createdBy").notEmpty().withMessage("userId cannot be empty"),
   ];
 };

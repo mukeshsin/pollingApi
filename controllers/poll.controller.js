@@ -2,8 +2,11 @@ import Poll from "../models/poll.js";
 
 export const createPoll = async (req, res) => {
   try {
-    await Poll.create(req.body);
-    res.status(200).send({ message: "created Poll successfully" });
+    const poll = await Poll.create({
+      title: req.body.title,
+      createdBy: req.body.userId,
+    });
+    res.status(200).send(poll);
   } catch (error) {
     console.log(error);
     res.status(500).send({ message: "500 error to the user" });

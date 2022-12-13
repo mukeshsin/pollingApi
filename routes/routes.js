@@ -39,8 +39,8 @@ import {
   deletePoll,
 } from "../controllers/poll.controller.js";
 
-//Option crud operations
-import { createOptions } from "../controllers/option.controller.js";
+import { createOption } from "../controllers/option.controller.js";
+import { voteCount } from "../controllers/vote.controllers.js";
 
 //Define router
 const router = express.Router();
@@ -91,7 +91,10 @@ router.put(
 
 router.delete("/poll/:id", validateJwtToken, deletePoll);
 
-//routes for option
-router.post("/create/option", createOptions);
+//routes for options
+router.post("/option/create", validateJwtToken, createOption);
+
+//routes for vote
+router.post("/vote/count", validateJwtToken, voteCount);
 
 export default router;

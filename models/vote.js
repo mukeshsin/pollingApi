@@ -5,14 +5,13 @@ import db from "../config/db.config.js";
 import User from "./user.js";
 const { DataTypes } = Sequelize;
 // table define
-const Poll = db.define("polls", {
-  title: {
-    type: DataTypes.STRING,
-    allownull: false,
+const Vote = db.define("votes", {
+  optionId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
   },
   createdBy: {
     type: DataTypes.INTEGER,
-    allowNull: false,
     references: {
       model: User,
       key: "id",
@@ -20,4 +19,4 @@ const Poll = db.define("polls", {
   },
 });
 
-export default Poll;
+export default Vote;
