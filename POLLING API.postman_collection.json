@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"Clerk\",\r\n    \"description\":\"A Clerk, or Bookkeeper, is responsible for performing administrative tasks to support daily business operations. \"\r\n}",
+							"raw": "{\r\n    \"name\":\"ca\",\r\n    \"description\":\"A chartered accountant (CA) is an international accounting designation granted to accounting professionals in many countries around the world, aside from the United States. \"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -93,7 +93,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/role/edit/5",
+							"raw": "http://localhost:3000/role/edit/4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -102,7 +102,7 @@
 							"path": [
 								"role",
 								"edit",
-								"5"
+								"4"
 							]
 						}
 					},
@@ -141,7 +141,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"password\":\"inno2020\",\r\n    \"firstName\":\"amit\",\r\n    \"lastName\":\"singh\",\r\n    \"email\":\"amitsingh12345@gmail.com\",\r\n    \"roleId\":5\r\n}",
+							"raw": "{\r\n    \"password\":\"inno2020\",\r\n    \"firstName\":\"amit\",\r\n    \"lastName\":\"singh\",\r\n    \"email\":\"amitsingh1234@gmail.com\",\r\n    \"roleId\":4\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -170,7 +170,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\":\"amitsingh12345@gmail.com\",\r\n    \"password\":\"inno2020\"\r\n}",
+							"raw": "{\r\n    \"email\":\"amitsingh1@gmail.com\",\r\n    \"password\":\"inno2020\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -234,7 +234,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwOTM3MTM1LCJleHAiOjE2NzA5NDA3MzV9.8_fbnJh0FC6WT-FIzHKqrGr8785w8hPrDEHR7xA5_1k",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcxMDIyNjI0LCJleHAiOjE2NzEwMjYyMjR9.hZJ6QnzLmTFNX2Hd_offJ6s54-AokK5G4SjOaGxCJCg",
 								"type": "text"
 							}
 						],
@@ -267,7 +267,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwOTM3MTM1LCJleHAiOjE2NzA5NDA3MzV9.8_fbnJh0FC6WT-FIzHKqrGr8785w8hPrDEHR7xA5_1k",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcxMDIyNjI0LCJleHAiOjE2NzEwMjYyMjR9.hZJ6QnzLmTFNX2Hd_offJ6s54-AokK5G4SjOaGxCJCg",
 								"type": "text"
 							}
 						],
@@ -326,7 +326,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwOTM3MTM1LCJleHAiOjE2NzA5NDA3MzV9.8_fbnJh0FC6WT-FIzHKqrGr8785w8hPrDEHR7xA5_1k",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcxMDIyNjI0LCJleHAiOjE2NzEwMjYyMjR9.hZJ6QnzLmTFNX2Hd_offJ6s54-AokK5G4SjOaGxCJCg",
 								"type": "text"
 							}
 						],
@@ -367,13 +367,13 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNjcwOTM3ODAyLCJleHAiOjE2NzA5NDE0MDJ9.XPtGjfHOaeVxHU9afUhLJ6IDqZ5OFIl_3q2-Kcn1dAU",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNjcxMDIyODU4LCJleHAiOjE2NzEwMjY0NTh9.kHPa3kFGfF3m2Yde_qQH8F3GwzL_AwPG_8Lw2IOwGow",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\":\"What is your favourite color?\"\r\n  \r\n}",
+							"raw": "{\r\n    \"title\":\"Which one is your favourite places?\"\r\n  \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -405,7 +405,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNjcwOTM3ODAyLCJleHAiOjE2NzA5NDE0MDJ9.XPtGjfHOaeVxHU9afUhLJ6IDqZ5OFIl_3q2-Kcn1dAU",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNjcxMDIyODU4LCJleHAiOjE2NzEwMjY0NTh9.kHPa3kFGfF3m2Yde_qQH8F3GwzL_AwPG_8Lw2IOwGow",
 								"type": "text"
 							}
 						],
@@ -419,7 +419,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/poll/list",
+							"raw": "http://localhost:3000/poll/list/1?limit=4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -427,7 +427,14 @@
 							"port": "3000",
 							"path": [
 								"poll",
-								"list"
+								"list",
+								"1"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "4"
+								}
 							]
 						}
 					},
@@ -440,12 +447,12 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNjcwOTM3ODAyLCJleHAiOjE2NzA5NDE0MDJ9.XPtGjfHOaeVxHU9afUhLJ6IDqZ5OFIl_3q2-Kcn1dAU",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNjcxMDIwMjA0LCJleHAiOjE2NzEwMjM4MDR9.IVjggP52Lla2jmA76FmTc7ZKW5XORlkoYs8Moyv3RXo",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/poll/4",
+							"raw": "http://localhost:3000/poll/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -453,7 +460,7 @@
 							"port": "3000",
 							"path": [
 								"poll",
-								"4"
+								"1"
 							]
 						}
 					},
@@ -524,7 +531,83 @@
 		},
 		{
 			"name": "option",
-			"item": []
+			"item": [
+				{
+					"name": "option create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiaWF0IjoxNjcwOTk2NDA2LCJleHAiOjE2NzEwMDAwMDZ9.3FDpi6PjrqDpzCpeW5EtjyC9Faww8cmhERma2oxvvng",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"optionTitle\":\"White\",\r\n    \"pollId\":\"5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/option/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"option",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vote",
+			"item": [
+				{
+					"name": "vote count",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwOTk2NTY5LCJleHAiOjE2NzEwMDAxNjl9.4lxuOP2zeDYeJXbA0-0JRSdgo66SqBDxhRxIw5qDZqU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"optionId\":\"5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/vote/count",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"vote",
+								"count"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

@@ -80,7 +80,7 @@ router.post(
   [valiadatePollData(), validate],
   createPoll
 );
-router.get("/poll/list", validateJwtToken, getListPoll);
+router.get("/poll/list/:page", validateJwtToken, getListPoll);
 router.get("/poll/:id", validateJwtToken, getSinglePoll);
 router.put(
   "/poll/:id",

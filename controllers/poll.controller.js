@@ -1,11 +1,13 @@
 import Poll from "../models/poll.js";
-
+import Option from "../models/option.js";
+import Vote from "../models/vote.js";
 export const createPoll = async (req, res) => {
   try {
     const poll = await Poll.create({
       title: req.body.title,
       createdBy: req.body.userId,
     });
+
     res.status(200).send(poll);
   } catch (error) {
     console.log(error);
@@ -13,9 +15,13 @@ export const createPoll = async (req, res) => {
   }
 };
 
+//poll list by page no.
 export const getListPoll = async (req, res) => {
   try {
-    const polls = await Poll.findAll();
+    const polls = await Poll.findAndCountAll({
+      limit: parseInt(req.query.limit),
+      offset: (req.params.page - 1) * parseInt(req.query.limit),
+    });
     res.status(200).send(polls);
   } catch (error) {
     console.log(error);
@@ -26,6 +32,19 @@ export const getListPoll = async (req, res) => {
 export const getSinglePoll = async (req, res) => {
   try {
     const poll = await Poll.findOne({
+      attributes: ["title"],
+      include: [
+        {
+          model: Option,
+          as: "optionList",
+          attributes: ["optionTitle", "pollId"],
+        },
+        {
+          model: Vote,
+          as: "voteCount",
+          attributes: ["optionId"],
+        },
+      ],
       where: {
         id: req.params.id,
       },

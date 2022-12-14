@@ -9,20 +9,16 @@ const Option = db.define("options", {
   optionTitle: {
     type: DataTypes.STRING,
     allownull: false,
-    validate: {
-      min: 2,
-      max: 3,
-    },
-    pollId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    createdBy: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: User,
-        key: "id",
-      },
+  },
+  pollId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+  createdBy: {
+    type: DataTypes.INTEGER,
+    references: {
+      model: User,
+      key: "id",
     },
   },
 });
