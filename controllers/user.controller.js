@@ -60,9 +60,16 @@ export const userLogin = async (req, res) => {
 //create User
 export const createUser = async (req, res) => {
   try {
-    await User.create(req.body);
     const salt = await bcrypt.genSalt();
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
+    const user = await User.create({
+      password: hashedPassword,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      roleId: req.body.roleId,
+    });
+    console.log(user);
     res.status(200).send({ message: "user created successfully" });
   } catch (error) {
     console.log(error);

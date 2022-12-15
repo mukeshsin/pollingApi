@@ -7,7 +7,6 @@ export const createPoll = async (req, res) => {
       title: req.body.title,
       createdBy: req.body.userId,
     });
-
     res.status(200).send(poll);
   } catch (error) {
     console.log(error);
@@ -37,12 +36,14 @@ export const getSinglePoll = async (req, res) => {
         {
           model: Option,
           as: "optionList",
-          attributes: ["optionTitle", "pollId"],
-        },
-        {
-          model: Vote,
-          as: "voteCount",
-          attributes: ["optionId"],
+          attributes: ["optionTitle", "pollId", "id"],
+          include: [
+            {
+              model: Vote,
+              as: "voteCount",
+              attributes: ["optionId"],
+            },
+          ],
         },
       ],
       where: {

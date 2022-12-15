@@ -42,6 +42,8 @@ import {
 import { createOption } from "../controllers/option.controller.js";
 import { voteCount } from "../controllers/vote.controllers.js";
 
+import { companyRegister } from "../controllers/company.controller.js";
+
 //Define router
 const router = express.Router();
 
@@ -96,5 +98,8 @@ router.post("/option/create", validateJwtToken, createOption);
 
 //routes for vote
 router.post("/vote/count", validateJwtToken, voteCount);
+
+//routes for company register
+router.post("/company/register", companyRegister);
 
 export default router;
