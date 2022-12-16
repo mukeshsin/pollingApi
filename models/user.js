@@ -8,6 +8,11 @@ import Company from "./company.js";
 const { DataTypes } = Sequelize;
 // table define
 const User = db.define("users", {
+  id:{
+    type: Sequelize.INTEGER,
+    autoIncrement: true,
+    primaryKey: true
+  },
   password: {
     type: DataTypes.STRING,
     allowNull: false,
