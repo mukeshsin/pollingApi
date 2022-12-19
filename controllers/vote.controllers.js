@@ -1,6 +1,6 @@
 import Vote from "../models/vote.js";
 
-export const voteCount = async (req, res) => {
+export const doVote = async (req, res) => {
   try {
     await Vote.create({
       optionId: req.body.optionId,

@@ -38,7 +38,7 @@ import {
   updatePoll,
   deletePoll,
 } from "../controllers/poll.controller.js";
-import { voteCount } from "../controllers/vote.controllers.js";
+import { doVote } from "../controllers/vote.controllers.js";
 
 import { companyRegister } from "../controllers/company.controller.js";
 
@@ -92,7 +92,7 @@ router.put(
 router.delete("/poll/:id", validateJwtToken, deletePoll);
 
 //routes for vote
-router.post("/vote/count", validateJwtToken, voteCount);
+router.post("/vote/count", validateJwtToken, doVote);
 
 //routes for company register
 router.post("/company/register", companyRegister);

@@ -27,7 +27,22 @@ export const getListPoll = async (req, res) => {
     const polls = await Poll.findAndCountAll({
       limit: parseInt(req.query.limit),
       offset: (req.params.page - 1) * parseInt(req.query.limit),
+      include: [
+        {
+          model: Option,
+          as: "optionList",
+          attributes: ["optionTitle", "pollId", "id"],
+          include: [
+            {
+              model: Vote,
+              as: "voteCount",
+              attributes: ["optionId"],
+            },
+          ],
+        },
+      ],
     });
+
     res.status(200).send(polls);
   } catch (error) {
     console.log(error);
