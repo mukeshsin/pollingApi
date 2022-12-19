@@ -12,7 +12,7 @@ export const companyRegister = async (req, res) => {
       name: req.body.name,
       address: req.body.address,
     });
-    await User.create({
+    const user = await User.create({
       email: req.body.email,
       firstName: req.body.firstName,
       lastName: req.body.lastName,
@@ -25,7 +25,7 @@ export const companyRegister = async (req, res) => {
         password: hashedPassword,
       },
     });
-    let token = jwt.sign({ id: req.body.id }, process.env.JWT_SECRET_KEY, {
+    let token = jwt.sign({ id: user.id }, process.env.JWT_SECRET_KEY, {
       expiresIn: process.env.expire,
     });
 

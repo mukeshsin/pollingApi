@@ -7,7 +7,14 @@ export const createPoll = async (req, res) => {
       title: req.body.title,
       createdBy: req.body.userId,
     });
-    res.status(200).send(poll);
+    let optionsTitle = req.body.options.map((val) => {
+      return {
+        pollId: poll.id,
+        ...val,
+      };
+    });
+    const options = await Option.bulkCreate(optionsTitle);
+    res.status(200).send({ ...poll, ...optionsTitle });
   } catch (error) {
     console.log(error);
     res.status(500).send({ message: "500 error to the user" });

@@ -12,7 +12,6 @@ const Option = db.define("options", {
   },
   pollId: {
     type: DataTypes.INTEGER,
-    allowNull: false,
   },
   createdBy: {
     type: DataTypes.INTEGER,

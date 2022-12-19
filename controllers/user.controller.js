@@ -69,7 +69,6 @@ export const createUser = async (req, res) => {
       email: req.body.email,
       roleId: req.body.roleId,
     });
-    console.log(user);
     res.status(200).send({ message: "user created successfully" });
   } catch (error) {
     console.log(error);
