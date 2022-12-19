@@ -21,13 +21,26 @@ import {
   deleteUser,
   userMyProfile,
 } from "../controllers/user.controller.js";
-
 //import middleware
 import { validateJwtToken } from "../middleware.js";
-import { validateUserData, validateRoleData, validate } from "../middleware.js";
+import {
+  validateUserData,
+  validateRoleData,
+  valiadatePollData,
+  validate,
+} from "../middleware.js";
 
 //poll crud operation
- import {createPoll}from "../controllers/poll.controller.js";
+import {
+  createPoll,
+  getListPoll,
+  getSinglePoll,
+  updatePoll,
+  deletePoll,
+} from "../controllers/poll.controller.js";
+import { doVote } from "../controllers/vote.controllers.js";
+
+import { companyRegister } from "../controllers/company.controller.js";
 
 //Define router
 const router = express.Router();
@@ -60,8 +73,28 @@ router.put(
 router.delete("/user/:id", validateJwtToken, deleteUser);
 router.get("/user/own/profile", validateJwtToken, userMyProfile);
 
-
 //routes for poll
-router.post("/poll/add",createPoll);
+router.post(
+  "/poll/add",
+  validateJwtToken,
+  [valiadatePollData(), validate],
+  createPoll
+);
+router.get("/poll/list/:page", validateJwtToken, getListPoll);
+router.get("/poll/:id", validateJwtToken, getSinglePoll);
+router.put(
+  "/poll/:id",
+  validateJwtToken,
+  [valiadatePollData(), validate],
+  updatePoll
+);
+
+router.delete("/poll/:id", validateJwtToken, deletePoll);
+
+//routes for vote
+router.post("/vote/count", validateJwtToken, doVote);
+
+//routes for company register
+router.post("/company/register", companyRegister);
 
 export default router;

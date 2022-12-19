@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"ca\",\r\n    \"description\":\"A chartered accountant (CA) is an international accounting designation granted to accounting professionals in many countries around the world, aside from the United States..\"\r\n}",
+							"raw": "{\r\n    \"name\":\"clerk\",\r\n    \"description\":\" An Office Clerk's responsibilities include answering phones, taking messages, handling mail and scheduling appointments. \"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -93,7 +93,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/role/edit/6",
+							"raw": "http://localhost:3000/role/edit/4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -102,7 +102,7 @@
 							"path": [
 								"role",
 								"edit",
-								"6"
+								"4"
 							]
 						}
 					},
@@ -141,7 +141,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"password\":\"inno2020\",\r\n    \"firstName\":\"amit\",\r\n    \"lastName\":\"singh\",\r\n    \"email\":\"amitsingh12@gmail.com\",\r\n    \"roleId\":7\r\n}",
+							"raw": "{\r\n    \"password\":\"inno2020\",\r\n    \"firstName\":\"amit\",\r\n    \"lastName\":\"singh\",\r\n    \"email\":\"amitsingh12345@gmail.com\",\r\n    \"roleId\":5\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -170,7 +170,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\":\"amit1@gmail.com\",\r\n    \"password\":\"inno2020\"\r\n}",
+							"raw": "{\r\n    \"email\":\"amitsingh12@gmail.com\",\r\n    \"password\":\"inno2020\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -199,7 +199,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwODI2NDc1LCJleHAiOjE2NzA4MzAwNzV9.19TySuhdH0nAsDRcD-0GGqNtRUtQsdj2ze8xuvGY3HQ",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjcwOTIxNTgxLCJleHAiOjE2NzA5MjUxODF9.0BoDgeXfg2EkyZePL4Uog0WbVzURZ5ZAqpSw3-1uix8",
 								"type": "text"
 							}
 						],
@@ -234,7 +234,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwODI3MDM1LCJleHAiOjE2NzA4MzA2MzV9.JyQ9Jk_i0hlzDLh4PP0A4ddD7GGmFSWUwQYyDrbcbfQ",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcxNDI5NDMzLCJleHAiOjE2NzE0MzMwMzN9.IdQL4abIY69tvvAtls0K_PeeB76QWvyPvWVIsa2nCzw",
 								"type": "text"
 							}
 						],
@@ -267,7 +267,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwODI3MDM1LCJleHAiOjE2NzA4MzA2MzV9.JyQ9Jk_i0hlzDLh4PP0A4ddD7GGmFSWUwQYyDrbcbfQ",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcxMDgxMjE4LCJleHAiOjE2NzEwODQ4MTh9.tsE0IqimbUCU275b_UT2aQ6Bte74sxYEdeIGd_eJS94",
 								"type": "text"
 							}
 						],
@@ -293,7 +293,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwODI2NDc1LCJleHAiOjE2NzA4MzAwNzV9.19TySuhdH0nAsDRcD-0GGqNtRUtQsdj2ze8xuvGY3HQ",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjcwOTIxNTgxLCJleHAiOjE2NzA5MjUxODF9.0BoDgeXfg2EkyZePL4Uog0WbVzURZ5ZAqpSw3-1uix8",
 								"type": "text"
 							}
 						],
@@ -302,7 +302,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:3000/user/15",
+							"raw": "http://localhost:3000/user/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -310,7 +310,7 @@
 							"port": "3000",
 							"path": [
 								"user",
-								"15"
+								"1"
 							]
 						}
 					},
@@ -326,7 +326,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwODI3MDM1LCJleHAiOjE2NzA4MzA2MzV9.JyQ9Jk_i0hlzDLh4PP0A4ddD7GGmFSWUwQYyDrbcbfQ",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcxNDI5NDMzLCJleHAiOjE2NzE0MzMwMzN9.IdQL4abIY69tvvAtls0K_PeeB76QWvyPvWVIsa2nCzw",
 								"type": "text"
 							}
 						],
@@ -359,7 +359,249 @@
 		},
 		{
 			"name": "Polls",
-			"item": []
+			"item": [
+				{
+					"name": "poll add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNjcxNDMwMDE5LCJleHAiOjE2NzE0MzM2MTl9.Kxx5PQ063HGK9PAcxHp-DHlZ3BHoNqD3F7VBrmjAnW4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"What is your favourite actor?\",\r\n  \"options\":[\r\n      {\r\n        \"optionTitle\":\"Salman\"\r\n      },{\r\n        \"optionTitle\":\"varun\"\r\n      },{\r\n        \"optionTitle\":\"Shahrukh\"\r\n      },{\r\n        \"optionTitle\":\"Tiger shroff\"\r\n      }\r\n  ],\r\n  \"pollId\":4\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/poll/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"poll",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get list poll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcxNDMxMTY4LCJleHAiOjE2NzE0MzQ3Njh9.Be-buTdMXsbY80JKbXjjR5kgTGG_KXdqoVZxnFIuGns",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/poll/list/1?limit=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"poll",
+								"list",
+								"1"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single poll",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcxNDMxMTY4LCJleHAiOjE2NzE0MzQ3Njh9.Be-buTdMXsbY80JKbXjjR5kgTGG_KXdqoVZxnFIuGns",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/poll/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"poll",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update poll",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwODQ3ODA4LCJleHAiOjE2NzA4NTE0MDh9.4Qm9xIyQwB5TbtvfskrgTyDgHh8fWJDduz5PU257FC0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\":\"what is your favourite actor\",\r\n\"createdBy\":1}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/poll/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"poll",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete poll",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwODQ3ODA4LCJleHAiOjE2NzA4NTE0MDh9.4Qm9xIyQwB5TbtvfskrgTyDgHh8fWJDduz5PU257FC0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/poll/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"poll",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vote",
+			"item": [
+				{
+					"name": "vote count",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjcxNDMxNjI5LCJleHAiOjE2NzE0MzUyMjl9.Siab-JvoBdM7BfU_3dMsxuGZXA3CeUXzingyvmMQWAg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"optionId\":\"13\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/vote/count",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"vote",
+								"count"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "company register",
+			"item": [
+				{
+					"name": "company register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\" rame pvt.ltd\",\r\n    \"email\":\"rame1@gmail.com\",\r\n    \"address\":\"Delhi\",\r\n    \"password\":\"abc123\",\r\n    \"firstName\":\"rame\",\r\n    \"lastName\":\"singh\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/company/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"company",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

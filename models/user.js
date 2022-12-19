@@ -3,10 +3,16 @@ import { Sequelize } from "sequelize";
 // import connection
 import db from "../config/db.config.js";
 import Role from "./role.js";
+import Company from "./company.js";
 
 const { DataTypes } = Sequelize;
 // table define
 const User = db.define("users", {
+  id:{
+    type: Sequelize.INTEGER,
+    autoIncrement: true,
+    primaryKey: true
+  },
   password: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -22,6 +28,14 @@ const User = db.define("users", {
     type: DataTypes.STRING,
     allowNull: false,
     unique: true,
+  },
+  companyId: {
+    type: DataTypes.INTEGER,
+    allownull: false,
+    references: {
+      model: Company,
+      key: "id",
+    },
   },
   roleId: {
     type: DataTypes.INTEGER,

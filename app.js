@@ -2,14 +2,14 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
 import db from "./config/db.config.js";
-//await db.sync({ alter: true });
+await db.sync({ alter: true });
+import "./models/index.js";
 import Router from "./routes/routes.js";
 const app = express();
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static("public"));
 
 try {
   await db.authenticate();

@@ -60,3 +60,12 @@ export const validateRoleData = () => {
       .withMessage("write a description atleast 15 character"),
   ];
 };
+
+//validatePollData
+export const valiadatePollData = () => {
+  return [
+    check("title")
+      .isLength({ min: 8 })
+      .withMessage("title must be contain atleast 8  character more"),
+  ];
+};

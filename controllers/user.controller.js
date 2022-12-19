@@ -3,6 +3,7 @@ dotenv.config();
 import User from "../models/user.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import { generateToken } from "../helper.js";
 
 //user Register
 export const userRegister = async (req, res) => {
@@ -46,10 +47,9 @@ export const userLogin = async (req, res) => {
     if (!user) {
       res.status(400).json({ message: "user data not found" });
     } else {
-      let token = jwt.sign({ id: user.id }, process.env.JWT_SECRET_KEY, {
-        expiresIn: process.env.expire,
-      });
-      return res.status(200).send({ user, token });
+      return res
+        .status(200)
+        .send({ user, token: await generateToken(user.id) });
     }
   } catch (error) {
     console.log(error);
@@ -60,9 +60,15 @@ export const userLogin = async (req, res) => {
 //create User
 export const createUser = async (req, res) => {
   try {
-    await User.create(req.body);
     const salt = await bcrypt.genSalt();
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
+    const user = await User.create({
+      password: hashedPassword,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      roleId: req.body.roleId,
+    });
     res.status(200).send({ message: "user created successfully" });
   } catch (error) {
     console.log(error);
@@ -140,8 +146,6 @@ export const userMyProfile = async (req, res) => {
       where: { id: req.body.userId },
       attributes: ["id", "firstName", "lastName", "email"],
     });
-
-    console.log(user);
     res.status(200).send(user);
   } catch (error) {
     console.log(error);
