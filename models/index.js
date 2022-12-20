@@ -5,8 +5,6 @@ import Vote from "./vote.js";
 Poll.hasMany(Option, {
   as: "optionList",
 });
-Option.hasMany(Vote, {
-  as: "voteCount",
-});
+Option.hasMany(Vote)
 
 export default { Poll, Option };

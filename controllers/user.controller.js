@@ -100,9 +100,7 @@ export const getUserById = async (req, res) => {
     });
     res.status(200).send(user);
   } catch (error) {
-    res.status(500).send({
-      message: "500 error to the user",
-    });
+    res.status(500).send(error);
   }
 };
 

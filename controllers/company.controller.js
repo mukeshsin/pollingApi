@@ -2,6 +2,7 @@ import Company from "../models/company.js";
 import User from "../models/user.js";
 import bcrypt from "bcrypt";
 import { generateToken } from "../helper.js";
+import Role from "../models/role.js";
 
 export const companyRegister = async (req, res) => {
   try {
@@ -18,6 +19,10 @@ export const companyRegister = async (req, res) => {
       lastName: req.body.lastName,
       password: hashedPassword,
       companyId: company.id,
+    });
+    await Role.create({
+      name: req.body.name,
+      description: req.body.description,
     });
 
     res.status(200).send({ company, token: await generateToken(user.id) });

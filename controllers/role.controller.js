@@ -59,6 +59,7 @@ export const deleteRole = async (req, res) => {
         id: req.params.id,
       },
     });
+    console.log({ id: req.params.id });
     res.status(200).send({
       message: "Role Deleted",
     });

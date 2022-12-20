@@ -13,8 +13,8 @@ export const createPoll = async (req, res) => {
         ...val,
       };
     });
-    const options = await Option.bulkCreate(optionsTitle);
-    res.status(200).send({ ...poll, ...optionsTitle });
+    await Option.bulkCreate(optionsTitle);
+    res.status(200).send({ poll, optionsTitle });
   } catch (error) {
     console.log(error);
     res.status(500).send({ message: "500 error to the user" });
@@ -32,13 +32,10 @@ export const getListPoll = async (req, res) => {
           model: Option,
           as: "optionList",
           attributes: ["optionTitle", "pollId", "id"],
-          include: [
-            {
-              model: Vote,
-              as: "voteCount",
-              attributes: ["optionId"],
-            },
-          ],
+          include: {
+            model: Vote,
+            attributes: ["optionId"],
+          },
         },
       ],
     });
@@ -59,13 +56,13 @@ export const getSinglePoll = async (req, res) => {
           model: Option,
           as: "optionList",
           attributes: ["optionTitle", "pollId", "id"],
-          include: [
+          include: 
             {
               model: Vote,
               as: "voteCount",
               attributes: ["optionId"],
             },
-          ],
+        
         },
       ],
       where: {
