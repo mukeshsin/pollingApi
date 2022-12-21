@@ -28,6 +28,6 @@ export const companyRegister = async (req, res) => {
     res.status(200).send({ company, token: await generateToken(user.id) });
   } catch (error) {
     console.log(error);
-    res.status(500).send({ message: "500 error to the user" });
+    res.status(500).send(error.original.sqlMessage);
   }
 };

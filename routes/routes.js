@@ -40,6 +40,11 @@ import {
 } from "../controllers/poll.controller.js";
 import { doVote } from "../controllers/vote.controllers.js";
 
+//option crud operation
+import { updateOption } from "../controllers/option.controller.js";
+
+import { deleteOption } from "../controllers/option.controller.js";
+
 import { companyRegister } from "../controllers/company.controller.js";
 
 //Define router
@@ -91,10 +96,14 @@ router.put(
 
 router.delete("/poll/:id", validateJwtToken, deletePoll);
 
+//routes for option update and delete
+router.put("/option/edit/:id", validateJwtToken, updateOption);
+router.delete("/option/delete/:id", validateJwtToken, deleteOption);
+
 //routes for vote
 router.post("/vote/count", validateJwtToken, doVote);
 
 //routes for company register
-router.post("/company/register", companyRegister);
+router.post("/company/register",companyRegister);
 
 export default router;

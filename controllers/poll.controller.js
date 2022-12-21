@@ -17,7 +17,7 @@ export const createPoll = async (req, res) => {
     res.status(200).send({ poll, optionsTitle });
   } catch (error) {
     console.log(error);
-    res.status(500).send({ message: "500 error to the user" });
+    res.status(500).send(error.original.sqlMessage);
   }
 };
 
@@ -35,6 +35,7 @@ export const getListPoll = async (req, res) => {
           include: {
             model: Vote,
             attributes: ["optionId"],
+            attributes: ["optionId"],
           },
         },
       ],
@@ -43,7 +44,7 @@ export const getListPoll = async (req, res) => {
     res.status(200).send(polls);
   } catch (error) {
     console.log(error);
-    res.status(500).send({ message: "500 error to the user" });
+    res.status(500).send(error.original.sqlMessage);
   }
 };
 
@@ -56,13 +57,11 @@ export const getSinglePoll = async (req, res) => {
           model: Option,
           as: "optionList",
           attributes: ["optionTitle", "pollId", "id"],
-          include: 
-            {
-              model: Vote,
-              as: "voteCount",
-              attributes: ["optionId"],
-            },
-        
+          include: {
+            model: Vote,
+            as: "voteCount",
+            attributes: ["optionId"],
+          },
         },
       ],
       where: {
@@ -72,7 +71,7 @@ export const getSinglePoll = async (req, res) => {
     res.status(200).send(poll);
   } catch (error) {
     console.log(error);
-    res.status(500).send({ message: "500 error to the user" });
+    res.status(500).send(error.original.sqlMessage);
   }
 };
 
@@ -86,7 +85,7 @@ export const updatePoll = async (req, res) => {
     res.status(200).send({ message: "poll updated successfully" });
   } catch (error) {
     console.log(error);
-    res.status(500).send({ message: "500 error to the user" });
+    res.status(500).send(error.original.sqlMessage);
   }
 };
 
@@ -100,6 +99,6 @@ export const deletePoll = async (req, res) => {
     res.status(200).send({ message: "poll delete successfully" });
   } catch (error) {
     console.log(error);
-    res.status(500).send({ message: "500 error to the user" });
+    res.status(500).send(error.original.sqlMessage);
   }
 };

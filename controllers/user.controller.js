@@ -23,9 +23,7 @@ export const userRegister = async (req, res) => {
     });
   } catch (error) {
     console.log(error);
-    res.status(500).send({
-      message: error,
-    });
+    res.status(500).send(error.original.sqlMessage);
   }
 };
 
@@ -53,7 +51,7 @@ export const userLogin = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
-    res.status(500).send({ message: "500 error to the user" });
+    res.status(500).send(error.original.sqlMessage);
   }
 };
 
@@ -84,9 +82,7 @@ export const getUsersListByPage = async (req, res) => {
     });
     res.status(200).send(users);
   } catch (error) {
-    res.status(500).send({
-      message: "500 error to the user",
-    });
+    res.status(500).send(error.original.sqlMessage);
   }
 };
 
@@ -115,9 +111,7 @@ export const updateUser = async (req, res) => {
       message: "User updated",
     });
   } catch (error) {
-    res.status(500).send({
-      message: "500 error to the user",
-    });
+    res.status(500).send(error.original.sqlMessage);
   }
 };
 
@@ -132,9 +126,7 @@ export const deleteUser = async (req, res) => {
       message: "User Deleted",
     });
   } catch (error) {
-    res.status(500).send({
-      message: "500 error to the user",
-    });
+    res.status(500).send(error.original.sqlMessage);
   }
 };
 
@@ -147,8 +139,6 @@ export const userMyProfile = async (req, res) => {
     res.status(200).send(user);
   } catch (error) {
     console.log(error);
-    res.status(500).send({
-      message: "500 error to the user",
-    });
+    res.status(500).send(error.original.sqlMessage);
   }
 };
