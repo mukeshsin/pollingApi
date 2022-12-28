@@ -70,3 +70,12 @@ export const valiadatePollData = () => {
       .withMessage("title must be contain atleast 8  character more"),
   ];
 };
+
+//validateOptionData
+export const validateOptionData = () => {
+  return [
+    check("options")
+      .isArray({ min: 2 })
+      .withMessage("option should be greater than 2"),
+  ];
+};

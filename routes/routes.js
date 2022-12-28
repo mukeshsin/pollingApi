@@ -28,6 +28,7 @@ import {
   validateRoleData,
   valiadatePollData,
   validate,
+  validateOptionData,
 } from "../middleware.js";
 
 //poll crud operation
@@ -83,6 +84,7 @@ router.post(
   "/poll/add",
   validateJwtToken,
   [valiadatePollData(), validate],
+  [validateOptionData(), validate],
   createPoll
 );
 router.get("/poll/list/:page", validateJwtToken, getListPoll);
@@ -104,6 +106,6 @@ router.delete("/option/delete/:id", validateJwtToken, deleteOption);
 router.post("/vote/count", validateJwtToken, doVote);
 
 //routes for company register
-router.post("/company/register",companyRegister);
+router.post("/company/register", companyRegister);
 
 export default router;
