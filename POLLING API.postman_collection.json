@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"clerk\",\r\n    \"description\":\" An Office Clerk's responsibilities include answering phones, taking messages, handling mail and scheduling appointments. \"\r\n}",
+							"raw": "{\r\n    \"name\": \"pilot\",\r\n    \"description\": \"A pilot is trained to operate aircraft. As part of their duties, they file flight plans, perform maintenance checks and ensure the craft is ready for departure\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -93,7 +93,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/role/edit/4",
+							"raw": "http://localhost:3000/role/edit/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -102,7 +102,7 @@
 							"path": [
 								"role",
 								"edit",
-								"4"
+								"5"
 							]
 						}
 					},
@@ -114,7 +114,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/role/delete/3",
+							"raw": "http://localhost:3000/role/delete/4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -123,7 +123,7 @@
 							"path": [
 								"role",
 								"delete",
-								"3"
+								"4"
 							]
 						}
 					},
@@ -170,7 +170,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\":\"amitsingh12@gmail.com\",\r\n    \"password\":\"inno2020\"\r\n}",
+							"raw": "{\r\n    \"email\":\"amitsingh123@gmail.com\",\r\n    \"password\":\"inno2020\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -234,7 +234,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcxNDI5NDMzLCJleHAiOjE2NzE0MzMwMzN9.IdQL4abIY69tvvAtls0K_PeeB76QWvyPvWVIsa2nCzw",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcyMjkxNTkwLCJleHAiOjE2NzIyOTUxOTB9.D2JEenwPfOFBjLCUukZwIXX2qAvlyZ88E4tWPMSmRxI",
 								"type": "text"
 							}
 						],
@@ -267,7 +267,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcxMDgxMjE4LCJleHAiOjE2NzEwODQ4MTh9.tsE0IqimbUCU275b_UT2aQ6Bte74sxYEdeIGd_eJS94",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcyMjkxNTkwLCJleHAiOjE2NzIyOTUxOTB9.D2JEenwPfOFBjLCUukZwIXX2qAvlyZ88E4tWPMSmRxI",
 								"type": "text"
 							}
 						],
@@ -293,7 +293,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjcwOTIxNTgxLCJleHAiOjE2NzA5MjUxODF9.0BoDgeXfg2EkyZePL4Uog0WbVzURZ5ZAqpSw3-1uix8",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcxNTM4ODc3LCJleHAiOjE2NzE1NDI0Nzd9.4BZUBWTa3QfH57JjVJgp-1_rvuGGquBDxDj-u2mlSro",
 								"type": "text"
 							}
 						],
@@ -302,7 +302,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:3000/user/1",
+							"raw": "http://localhost:3000/user/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -310,7 +310,7 @@
 							"port": "3000",
 							"path": [
 								"user",
-								"1"
+								"3"
 							]
 						}
 					},
@@ -326,7 +326,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcxNDI5NDMzLCJleHAiOjE2NzE0MzMwMzN9.IdQL4abIY69tvvAtls0K_PeeB76QWvyPvWVIsa2nCzw",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcyMjkxNTkwLCJleHAiOjE2NzIyOTUxOTB9.D2JEenwPfOFBjLCUukZwIXX2qAvlyZ88E4tWPMSmRxI",
 								"type": "text"
 							}
 						],
@@ -367,13 +367,13 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNjcxNDMwMDE5LCJleHAiOjE2NzE0MzM2MTl9.Kxx5PQ063HGK9PAcxHp-DHlZ3BHoNqD3F7VBrmjAnW4",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNjcyMjkyOTkzLCJleHAiOjE2NzIyOTY1OTN9.zwmDfk1xxn2uzQujJq-SSlDUn9zFjHZZWq54PYJgNzk",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\":\"What is your favourite actor?\",\r\n  \"options\":[\r\n      {\r\n        \"optionTitle\":\"Salman\"\r\n      },{\r\n        \"optionTitle\":\"varun\"\r\n      },{\r\n        \"optionTitle\":\"Shahrukh\"\r\n      },{\r\n        \"optionTitle\":\"Tiger shroff\"\r\n      }\r\n  ],\r\n  \"pollId\":4\r\n\r\n}",
+							"raw": "{\r\n    \"title\":\"Which one is your favourite junk food?\",\r\n  \"options\":[\r\n      {\r\n        \"optionTitle\":\"momo\"\r\n      },{\r\n          \"optionTitle\":\"pizza\"\r\n      },{\r\n          \"optionTitle\":\"fries\"\r\n      }\r\n      \r\n  ],\r\n  \"pollId\":4\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -405,7 +405,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcxNDMxMTY4LCJleHAiOjE2NzE0MzQ3Njh9.Be-buTdMXsbY80JKbXjjR5kgTGG_KXdqoVZxnFIuGns",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcyMjkzMTIzLCJleHAiOjE2NzIyOTY3MjN9.m2NUON3-aqoMb4TKqJIE8IIZDUtM9DuDfxHibV0HbbE",
 								"type": "text"
 							}
 						],
@@ -447,7 +447,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcxNDMxMTY4LCJleHAiOjE2NzE0MzQ3Njh9.Be-buTdMXsbY80JKbXjjR5kgTGG_KXdqoVZxnFIuGns",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcyMjkzMTIzLCJleHAiOjE2NzIyOTY3MjN9.m2NUON3-aqoMb4TKqJIE8IIZDUtM9DuDfxHibV0HbbE",
 								"type": "text"
 							}
 						],
@@ -539,7 +539,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjcxNDMxNjI5LCJleHAiOjE2NzE0MzUyMjl9.Siab-JvoBdM7BfU_3dMsxuGZXA3CeUXzingyvmMQWAg",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNjcyMjk2MjU0LCJleHAiOjE2NzIyOTk4NTR9.65aGj9MhrUJrRt3i59p974ccGvTCoFQWj2yrii9zJsA",
 								"type": "text"
 							}
 						],
@@ -579,7 +579,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\" rame pvt.ltd\",\r\n    \"email\":\"rame1@gmail.com\",\r\n    \"address\":\"Delhi\",\r\n    \"password\":\"abc123\",\r\n    \"firstName\":\"rame\",\r\n    \"lastName\":\"singh\"\r\n}",
+							"raw": "{\r\n    \"companyName\":\" mk123456 pvt.ltd\",\r\n    \"email\":\"mk123456@gmail.com\",\r\n    \"address\":\"Delhi\",\r\n    \"password\":\"abc123\",\r\n    \"firstName\":\"mk\",\r\n    \"lastName\":\"singh\",\r\n    \"name\":\"carpenter\",\r\n    \"description\":\"carpenter is a person who build\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -596,6 +596,74 @@
 							"path": [
 								"company",
 								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "options",
+			"item": [
+				{
+					"name": "update option",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjcxNjAwNTM5LCJleHAiOjE2NzE2MDQxMzl9.d3U1cI51APuw1SBz0NEd5Ku-2q60yQTs3lH17PlgV6U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"optionTitle\":\"anilkapoor\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/option/edit/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"option",
+								"edit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete option",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjcxNjAwNTM5LCJleHAiOjE2NzE2MDQxMzl9.d3U1cI51APuw1SBz0NEd5Ku-2q60yQTs3lH17PlgV6U",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/option/delete/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"option",
+								"delete",
+								"8"
 							]
 						}
 					},

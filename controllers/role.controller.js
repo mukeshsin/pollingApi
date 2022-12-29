@@ -5,7 +5,7 @@ export const createRole = async (req, res) => {
     res.status(200).send({ message: "role created successfully" });
   } catch (error) {
     console.log(error);
-    res.status(500).send({ message: "500 error to the user" });
+    res.status(500).send(error.original.sqlMessage);
   }
 };
 
@@ -14,9 +14,7 @@ export const roleList = async (req, res) => {
     const roles = await Role.findAll();
     res.status(200).send(roles);
   } catch (error) {
-    res.status(500).send({
-      message: "500 error to the user",
-    });
+    res.status(500).send(error.original.sqlMessage);
   }
 };
 
@@ -29,9 +27,7 @@ export const getRoleById = async (req, res) => {
     });
     res.status(200).send(role);
   } catch (error) {
-    res.status(500).send({
-      message: "500 error to the user",
-    });
+    res.status(500).send(error.original.sqlMessage);
   }
 };
 
@@ -46,9 +42,7 @@ export const updateRole = async (req, res) => {
       message: "Role updated",
     });
   } catch (error) {
-    res.status(500).send({
-      message: "500 error to the user",
-    });
+    res.status(500).send(error.original.sqlMessage);
   }
 };
 
@@ -59,12 +53,11 @@ export const deleteRole = async (req, res) => {
         id: req.params.id,
       },
     });
+    console.log({ id: req.params.id });
     res.status(200).send({
       message: "Role Deleted",
     });
   } catch (error) {
-    res.status(500).send({
-      message: "500 error to the user",
-    });
+    res.status(500).send(error.original.sqlMessage);
   }
 };

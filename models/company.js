@@ -5,9 +5,9 @@ import db from "../config/db.config.js";
 const { DataTypes } = Sequelize;
 // table define
 const Company = db.define("companies", {
-  name: {
+  companyName: {
     type: DataTypes.STRING,
-    allowNull: false,
+    
   },
   address: {
     type: DataTypes.STRING,

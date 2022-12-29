@@ -8,5 +8,4 @@ Poll.hasMany(Option, {
 Option.hasMany(Vote, {
   as: "voteCount",
 });
-
 export default { Poll, Option };

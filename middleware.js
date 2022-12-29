@@ -7,6 +7,7 @@ export const validateJwtToken = async (req, res, next) => {
   if (!token) {
     res.status(401).send({ message: "unauthorised token" });
   }
+  console.log(token);
   jwt.verify(token, process.env.JWT_SECRET_KEY, (err, user) => {
     if (err) {
       res.status(400).send({ message: "unauthorised token expire" });
@@ -67,5 +68,14 @@ export const valiadatePollData = () => {
     check("title")
       .isLength({ min: 8 })
       .withMessage("title must be contain atleast 8  character more"),
+  ];
+};
+
+//validateOptionData
+export const validateOptionData = () => {
+  return [
+    check("options")
+      .isArray({ min: 2 })
+      .withMessage("option should be greater than 2"),
   ];
 };

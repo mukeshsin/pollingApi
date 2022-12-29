@@ -9,6 +9,6 @@ export const doVote = async (req, res) => {
     res.status(200).send({ message: "vote create successfully" });
   } catch (error) {
     console.log(error);
-    res.status(500).send({ message: "500 error to the user" });
+    res.status(500).send(error.original.sqlMessage);
   }
 };
