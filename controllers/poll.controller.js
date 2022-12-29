@@ -45,13 +45,12 @@ export const getListPoll = async (req, res) => {
       ],
     });
 
-    if (polls.rows) {
+    if (polls.rows.optionList) {
       for (let i = 0; i < polls.rows.length; i++) {
         polls.rows[i].optionList[i].dataValues["totalVoteCount"] =
           polls.rows[i].optionList[i].voteCount.length;
       }
     }
-
     res.status(200).send(polls);
   } catch (error) {
     console.log(error);
