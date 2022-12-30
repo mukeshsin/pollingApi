@@ -11,12 +11,47 @@
 			"item": [
 				{
 					"name": "create roles",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"TEST CASE 1: if Everything is ok\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"TEST CASE 2: If data is correct and everything is ok and send Successful create message\", function () {\r",
+									"   let data= pm.response.json()\r",
+									"    pm.expect(data.message).to.eql(\"role created successfully\");\r",
+									"\r",
+									" });\r",
+									"\r",
+									"pm.test(\"TEST CASE 3:Response time is less than 200ms\", () => {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"pilot\",\r\n    \"description\": \"A pilot is trained to operate aircraft. As part of their duties, they file flight plans, perform maintenance checks and ensure the craft is ready for departure\"\r\n}",
+							"raw": "{\r\n    \"name\": \"officer123\",\r\n    \"description\": \"A pilot is trained to operate aircraft. As part of their duties, they file flight plans, perform maintenance checks and ensure the craft is ready for departure\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -40,6 +75,35 @@
 				},
 				{
 					"name": "Role lists",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"TEST CASE 1: if Everything is ok\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASE 2:Response time is less than 300ms\", () => {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"TEST CASE 3:The response has all properties\", () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"  pm.expect(responseJson.name)\r",
+									"})\r",
+									"\r",
+									"pm.test(\"TEST CASE 4:response must be valid and have a body\", function () {\r",
+									"     pm.response.to.be.ok;\r",
+									"     pm.response.to.be.withBody;\r",
+									"     pm.response.to.be.json;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -60,6 +124,35 @@
 				},
 				{
 					"name": "Get  single role by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"TEST CASE 1: if Everything is ok\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASE 2:Response time is less than 300ms\", () => {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"TEST CASE 3:The response has all properties\", () => {\r",
+									"    const responseJson = pm.response.json();\r",
+									"  pm.expect(responseJson.name)\r",
+									"})\r",
+									"\r",
+									"pm.test(\"TEST CASE 4:response must be valid and have a body\", function () {\r",
+									"     pm.response.to.be.ok;\r",
+									"     pm.response.to.be.withBody;\r",
+									"     pm.response.to.be.json;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
