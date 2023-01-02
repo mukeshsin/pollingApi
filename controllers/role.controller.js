@@ -39,7 +39,7 @@ export const updateRole = async (req, res) => {
       },
     });
     res.status(200).send({
-      message: "Role updated",
+      message: "Role updated successfully",
     });
   } catch (error) {
     res.status(500).send(error.original.sqlMessage);
