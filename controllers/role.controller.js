@@ -5,7 +5,7 @@ export const createRole = async (req, res) => {
     res.status(200).send({ message: "role created successfully" });
   } catch (error) {
     console.log(error);
-    res.status(500).send(error.original.sqlMessage);
+    res.status(500).send({message:"500 error to the user"});
   }
 };
 
@@ -39,7 +39,7 @@ export const updateRole = async (req, res) => {
       },
     });
     res.status(200).send({
-      message: "Role updated",
+      message: "Role updated successfully",
     });
   } catch (error) {
     res.status(500).send(error.original.sqlMessage);
