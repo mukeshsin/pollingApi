@@ -108,4 +108,6 @@ router.post("/vote/count", validateJwtToken, doVote);
 //routes for company register
 router.post("/company/register", companyRegister);
 
+
+
 export default router;
