@@ -1,5 +1,4 @@
 import express from "express";
-
 //role crud operation
 import {
   createRole,
@@ -8,10 +7,8 @@ import {
   updateRole,
   deleteRole,
 } from "../controllers/role.controller.js";
-
 // user register and user login
 import { userRegister, userLogin } from "../controllers/user.controller.js";
-
 //user crud operation
 import {
   createUser,
@@ -107,7 +104,5 @@ router.post("/vote/count", validateJwtToken, doVote);
 
 //routes for company register
 router.post("/company/register", companyRegister);
-
-
 
 export default router;
