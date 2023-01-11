@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(bodyParser.json())
-app.use(cors({ origin: "http://localhost:8080" }));
+app.use(cors({ origin: "http://localhost:3000" }));
 try {
   await db.authenticate();
   console.log("Connection has been established successfully.");
