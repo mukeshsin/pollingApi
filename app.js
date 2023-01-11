@@ -2,11 +2,14 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import bodyParser from"body-parser";
 import logger from "morgan";
+import cors from "cors";
+
 import db from "./config/db.config.js";
 //await db.sync({alter: true });
 import "./models/index.js";
 import Router from "./routes/routes.js";
 const app = express();
+app.use(cors());
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
