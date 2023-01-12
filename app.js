@@ -3,7 +3,6 @@ import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import cors from "cors";
 import logger from "morgan";
-import cors from "cors";
 
 import db from "./config/db.config.js";
 
