@@ -10,7 +10,7 @@ export const userRegister = async (req, res) => {
   const salt = await bcrypt.genSalt();
   const hashedPassword = await bcrypt.hash(req.body.password, salt);
   try {
-   const user= await User.create({
+    const user = await User.create({
       password: hashedPassword,
       firstName: req.body.firstName,
       lastName: req.body.lastName,
@@ -20,7 +20,7 @@ export const userRegister = async (req, res) => {
 
     res.status(200).send({
       message: "User register successful",
-      response: user
+      response: user,
     });
   } catch (error) {
     console.log(error);
@@ -43,20 +43,19 @@ export const userLogin = async (req, res) => {
       res.status(400).json({ message: "user data not found" });
     } else {
       const isMatch = await bcrypt.compare(password, user.password);
-      if(isMatch){
+      if (isMatch) {
         return res
-        .status(200)
-        .send({ user, token: await generateToken(user.id) });
-      }else{
+          .status(200)
+          .send({ user, token: await generateToken(user.id) });
+      } else {
         res.status(401).send({ message: "password is incorrect" });
       }
     }
   } catch (error) {
     console.log(error);
-    res.status(500).send({message:"500 error to the user"});
+    res.status(500).send({ message: "500 error to the user" });
   }
 };
-
 
 //create User
 export const createUser = async (req, res) => {
@@ -70,10 +69,9 @@ export const createUser = async (req, res) => {
       email: req.body.email,
       roleId: req.body.roleId,
     });
-    res.status(200).send({ message: 
-      "user created successfully",
-      response: user
-   });
+    res
+      .status(200)
+      .send({ message: "user created successfully", response: user });
   } catch (error) {
     console.log(error);
     res.status(500).send({ message: "500 error to the user" });
