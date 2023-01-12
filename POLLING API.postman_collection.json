@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "80ed7f90-91c4-4e61-94f0-6e63dd47f446",
+		"_postman_id": "82f075a0-8578-4792-89f5-de74184cbcee",
 		"name": "POLLING API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "7103822"
+		"_exporter_id": "23386926"
 	},
 	"item": [
 		{
@@ -11,12 +11,66 @@
 			"item": [
 				{
 					"name": "create roles",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"TEST CASES 1: if Everything is ok\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"TEST CASES 2: If data is correct and everything is ok and send Successful create message\", function () {\r",
+									"   let data= pm.response.json()\r",
+									"    pm.expect(data.message).to.eql(\"role created successfully\");\r",
+									"\r",
+									" });\r",
+									"\r",
+									"pm.test(\"TEST CASES 3:Response time is less than 300ms\", () => {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 4:Response body contains message\", function() {\r",
+									"  var jsonData = pm.response.json();\r",
+									"  pm.expect(jsonData).to.have.property(\"message\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"pilot\",\r\n    \"description\": \"A pilot is trained to operate aircraft. As part of their duties, they file flight plans, perform maintenance checks and ensure the craft is ready for departure\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Hr\",\r\n    \"description\":\"Human resources (HR) is the division of a business responsible for finding, screening, recruiting, and training job applicants.\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -40,6 +94,34 @@
 				},
 				{
 					"name": "Role lists",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test( \"TEST CASES 1: Status code is 200\", function() {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 2:Response time is less than 500ms\", () => {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 3:Response is an array\", function() {\r",
+									"  var jsonData = pm.response.json();\r",
+									"  pm.expect(jsonData).to.be.an('array');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 4:Array contains role objects\", function() {\r",
+									"  var jsonData = pm.response.json();\r",
+									"  pm.expect(jsonData[0]).to.have.all.keys('id', 'name', 'description','createdAt','updatedAt');\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -60,6 +142,35 @@
 				},
 				{
 					"name": "Get  single role by id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test( \"TEST CASES 1: Status code is 200\", function() {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 2:Response time is less than 400ms\", () => {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(400);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"TEST CASES 3:Response is an object\", function() {\r",
+									"  var jsonData = pm.response.json();\r",
+									"  pm.expect(jsonData).to.be.an('object');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 4:Object has correct keys\", function() {\r",
+									"  var jsonData = pm.response.json();\r",
+									"  pm.expect(jsonData).to.have.all.keys('id', 'name', 'description','updatedAt','createdAt');\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -80,6 +191,30 @@
 				},
 				{
 					"name": "role update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"TEST CASES 1: if Everything is ok\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 2:Response time is less than 500ms\", () => {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"TEST CASES 3: If data is correct and everything is ok and send Successful create message\", function () {\r",
+									"   let data= pm.response.json()\r",
+									"    pm.expect(data.message).to.eql(\"Role updated successfully\");\r",
+									"\r",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -93,7 +228,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/role/edit/5",
+							"raw": "http://localhost:3000/role/edit/4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -102,7 +237,7 @@
 							"path": [
 								"role",
 								"edit",
-								"5"
+								"4"
 							]
 						}
 					},
@@ -110,11 +245,34 @@
 				},
 				{
 					"name": "role delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"TEST CASES 1: if Everything is ok\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 2:Response time is less than 300ms\", () => {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 3: If data is correct and everything is ok and send Successful create message\", function () {\r",
+									"   let data= pm.response.json()\r",
+									"    pm.expect(data.message).to.eql(\"Role Deleted\");\r",
+									"\r",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/role/delete/4",
+							"raw": "http://localhost:3000/role/delete/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -123,7 +281,7 @@
 							"path": [
 								"role",
 								"delete",
-								"4"
+								"5"
 							]
 						}
 					},
@@ -136,12 +294,35 @@
 			"item": [
 				{
 					"name": "User register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									" pm.test(\"TEST CASES 1: if Everything is ok\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 2:response body contain message\",function(){\r",
+									"    let data= pm.response.json()\r",
+									"    pm.expect(data.message).to.eql(\"User register successful\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 3:Response time is less than 450ms\", () => {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(450);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"password\":\"inno2020\",\r\n    \"firstName\":\"amit\",\r\n    \"lastName\":\"singh\",\r\n    \"email\":\"amitsingh12345@gmail.com\",\r\n    \"roleId\":5\r\n}",
+							"raw": "{\r\n    \"password\":\"inno@2020\",\r\n    \"firstName\":\"karan\",\r\n    \"lastName\":\"singh\",\r\n    \"email\":\"karansingh1@gmail.com\",\r\n    \"roleId\":\"2\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -165,12 +346,38 @@
 				},
 				{
 					"name": "User login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.sendRequest(function (response) {\r",
+									"    // Assert that the response status code is 200\r",
+									"    pm.response.to.have.status(200);\r",
+									"\r",
+									"    // Assert that the response body contains the user object and a token\r",
+									"    var json = pm.response.json();\r",
+									"    pm.expect(json).to.have.property(\"user\");\r",
+									"    pm.expect(json).to.have.property(\"token\");\r",
+									"  });\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"TEST CASES 2:Response time is less than 400ms\", () => {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(400);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\":\"amitsingh123@gmail.com\",\r\n    \"password\":\"inno2020\"\r\n}\r\n",
+							"raw": "{\r\n    \"email\":\"amitkumar1@gmail.com\",\r\n    \"password\":\"inno@2020\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -194,18 +401,42 @@
 				},
 				{
 					"name": "creates users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"TEST CASES 1:Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 2:Response time is less than 400ms\", () => {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(400);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"TEST CASES 3:Response should contain message 'user created successfully'\", function () {\r",
+									"    pm.response.to.have.jsonBody('message', 'user created successfully');\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjcwOTIxNTgxLCJleHAiOjE2NzA5MjUxODF9.0BoDgeXfg2EkyZePL4Uog0WbVzURZ5ZAqpSw3-1uix8",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczNDQwNjM0LCJleHAiOjE2NzM0NTE0MzR9.z2waBfKOmbVCJF7VW262QlybK62TKikCzmh4xyC2lQs",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"password\":\"inno2020\",\r\n    \"firstName\":\"neha\",\r\n    \"lastName\":\"singh\",\r\n    \"email\":\"neha1@gmail.com\",\r\n    \"roleId\":1\r\n}",
+							"raw": "{\r\n    \"password\":\"inno2020\",\r\n    \"firstName\":\"neha1\",\r\n    \"lastName\":\"singh\",\r\n    \"email\":\"neha1234@gmail.com\",\r\n    \"roleId\":1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -229,12 +460,43 @@
 				},
 				{
 					"name": "Get user lists by page no.",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"TEST CASES 1:Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 2:Response should be an object\", function () {\r",
+									"    pm.expect(Array.isArray(pm.response.json())).to.be.false;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 3:Response should have expected keys\", function () {\r",
+									"    const rows = pm.response.json().rows;\r",
+									"    rows.forEach(data => {\r",
+									"        pm.expect(data).to.have.all.keys([ 'id','password','firstName','lastName','email','companyId','roleId',\r",
+									"        'updatedAt','createdAt']);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"TEST CASES 4:Response time is less than 400ms\", () => {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(400);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcyMjkxNTkwLCJleHAiOjE2NzIyOTUxOTB9.D2JEenwPfOFBjLCUukZwIXX2qAvlyZ88E4tWPMSmRxI",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczNTE4NTg3LCJleHAiOjE2NzM1MjkzODd9.dt1MH6NAfMJDuuXGb_ZlAPxLjyQdkW-GjZiWlmMs6sI",
 								"type": "text"
 							}
 						],
@@ -262,17 +524,52 @@
 				},
 				{
 					"name": "Get single user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"TEST CASES 1:Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 2:Response should be an object\", function () {\r",
+									"    pm.expect(typeof pm.response.json()).to.equal('object');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 3:Response time is less than 400ms\", () => {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 4:Response should contain valid user object\", function () {\r",
+									"    const user = pm.response.json();\r",
+									"    pm.expect(user).to.have.all.keys([\"id\",\r",
+									"    \"password\",\r",
+									"    \"firstName\",\r",
+									"    \"lastName\",\r",
+									"    \"email\",\r",
+									"    \"companyId\",\r",
+									"    \"roleId\",\r",
+									"    \"createdAt\",\r",
+									"    \"updatedAt\" ]);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcyMjkxNTkwLCJleHAiOjE2NzIyOTUxOTB9.D2JEenwPfOFBjLCUukZwIXX2qAvlyZ88E4tWPMSmRxI",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczNTE4NTg3LCJleHAiOjE2NzM1MjkzODd9.dt1MH6NAfMJDuuXGb_ZlAPxLjyQdkW-GjZiWlmMs6sI",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/user/1",
+							"raw": "http://localhost:3000/user/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -280,26 +577,56 @@
 							"port": "3000",
 							"path": [
 								"user",
-								"1"
+								"2"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "user deleted",
+					"name": "user updated",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"TEST CASES 1:Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 2:Response time is less than 300ms\", () => {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"TEST CASES 3:Response should contain message 'User updated'\", function () {\r",
+									"    pm.response.to.have.jsonBody('message', 'User updated');\r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
-						"method": "DELETE",
+						"method": "PUT",
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcxNTM4ODc3LCJleHAiOjE2NzE1NDI0Nzd9.4BZUBWTa3QfH57JjVJgp-1_rvuGGquBDxDj-u2mlSro",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczNTE4NTg3LCJleHAiOjE2NzM1MjkzODd9.dt1MH6NAfMJDuuXGb_ZlAPxLjyQdkW-GjZiWlmMs6sI",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": ""
+							"raw": "{\r\n    \"password\":\"inno2020\",\r\n    \"firstName\":\"neha1\",\r\n    \"lastName\":\"singh\",\r\n    \"email\":\"neha12@gmail.com\",\r\n    \"roleId\":3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
 							"raw": "http://localhost:3000/user/3",
@@ -318,6 +645,33 @@
 				},
 				{
 					"name": "userOwnProfile",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"TEST CASES 1:Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 2:Response time is less than 300ms\", () => {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 3:Response should be an object\", function () {\r",
+									"    pm.expect(typeof pm.response.json()).to.equal('object');\r",
+									"});\r",
+									"\r",
+									"pm.test(\" TEST CASES 4:Response should contain valid user object\", function () {\r",
+									"    const user = pm.response.json();\r",
+									"    pm.expect(user).to.have.all.keys(['id', 'firstName', 'lastName', 'email']);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -326,7 +680,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcyMjkxNTkwLCJleHAiOjE2NzIyOTUxOTB9.D2JEenwPfOFBjLCUukZwIXX2qAvlyZ88E4tWPMSmRxI",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczNTE4NTg3LCJleHAiOjE2NzM1MjkzODd9.dt1MH6NAfMJDuuXGb_ZlAPxLjyQdkW-GjZiWlmMs6sI",
 								"type": "text"
 							}
 						],
@@ -354,6 +708,55 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "user deleted",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"TEST CASES 1: if Everything is ok\", function () {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 2:Response time is less than 400ms\", () => {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 3: If data is correct and everything is ok and send Successful create message\", function () {\r",
+									"   let data= pm.response.json()\r",
+									"    pm.expect(data.message).to.eql(\"User Deleted\");\r",
+									"\r",
+									" });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczNDQwNjM0LCJleHAiOjE2NzM0NTE0MzR9.z2waBfKOmbVCJF7VW262QlybK62TKikCzmh4xyC2lQs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user/29",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"29"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -362,18 +765,48 @@
 			"item": [
 				{
 					"name": "poll add",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"TEST CASES 1:Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"TEST CASES 2:Response should contain poll object\", function () {\r",
+									"    const poll = pm.response.json().poll;\r",
+									"    pm.expect(poll).to.have.all.keys(['id', 'title', 'createdBy','updatedAt','createdBy']);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 3:Response should contain optionsTitle array\", function () {\r",
+									"    const optionsTitle = pm.response.json().optionsTitle;\r",
+									"    pm.expect(Array.isArray(optionsTitle)).to.be.true;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 4:Options should have expected keys\", function () {\r",
+									"    const optionsTitle = pm.response.json().optionsTitle;\r",
+									"    optionsTitle.forEach(option => {\r",
+									"        pm.expect(option).to.have.all.keys([ 'optionTitle', 'pollId']);\r",
+									"    });\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNjcyMjkyOTkzLCJleHAiOjE2NzIyOTY1OTN9.zwmDfk1xxn2uzQujJq-SSlDUn9zFjHZZWq54PYJgNzk",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczNTE4NTg3LCJleHAiOjE2NzM1MjkzODd9.dt1MH6NAfMJDuuXGb_ZlAPxLjyQdkW-GjZiWlmMs6sI",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\":\"Which one is your favourite junk food?\",\r\n  \"options\":[\r\n      {\r\n        \"optionTitle\":\"momo\"\r\n      },{\r\n          \"optionTitle\":\"pizza\"\r\n      },{\r\n          \"optionTitle\":\"fries\"\r\n      }\r\n      \r\n  ],\r\n  \"pollId\":4\r\n}",
+							"raw": "{\r\n    \"title\":\"Which one is your favourite  junk food?\",\r\n  \"options\":[\r\n      {\r\n        \"optionTitle\":\"momo\"\r\n      },{\r\n          \"optionTitle\":\"fries\"\r\n      },{\r\n          \"optionTitle\":\"pizza\"\r\n      }\r\n      \r\n  ],\r\n  \"pollId\":2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -397,6 +830,49 @@
 				},
 				{
 					"name": "Get list poll",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"TEST CASES 1:Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASE 2:Response should contain rows array\", function () {\r",
+									"    const rows = pm.response.json().rows;\r",
+									"    pm.expect(Array.isArray(rows)).to.be.true;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 3:rows should have expected keys\", function () {\r",
+									"    const rows = pm.response.json().rows;\r",
+									"    rows.forEach(row => {\r",
+									"        pm.expect(row).to.have.all.keys(['id', 'title', 'createdBy','createdAt' ,'updatedAt','optionList']);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 4:Response should contain polls object\", function () {\r",
+									"    const polls = pm.response.json();\r",
+									"    pm.expect(polls).to.have.all.keys(['count', 'rows']);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 5:Option list should have expected keys\", function () {\r",
+									"    const polls = pm.response.json();\r",
+									" if (polls.rows.optionList) {\r",
+									"      for (let i = 0; i < polls.rows.length; i++) {\r",
+									"          polls.rows[i].optionList[i].voteCount.length;\r",
+									"      }\r",
+									"    }\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -405,7 +881,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcyMjkzMTIzLCJleHAiOjE2NzIyOTY3MjN9.m2NUON3-aqoMb4TKqJIE8IIZDUtM9DuDfxHibV0HbbE",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczNTE4NTg3LCJleHAiOjE2NzM1MjkzODd9.dt1MH6NAfMJDuuXGb_ZlAPxLjyQdkW-GjZiWlmMs6sI",
 								"type": "text"
 							}
 						],
@@ -442,12 +918,42 @@
 				},
 				{
 					"name": "Get single poll",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"TEST CASES 1:Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 2:Response should contain poll object\", function () {\r",
+									"    const poll = pm.response.json();\r",
+									"    pm.expect(poll).to.have.all.keys(['title', 'optionList']);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 3:Response time is less than 500ms\", () => {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"TEST CASES 4:Option list should have expected keys\", function () {\r",
+									"    const poll = pm.response.json();\r",
+									"    poll.optionList.forEach(option => {\r",
+									"        pm.expect(option).to.have.all.keys(['id', 'optionTitle', 'pollId', 'voteCount', 'totalVoteCount']);\r",
+									"    });\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcyMjkzMTIzLCJleHAiOjE2NzIyOTY3MjN9.m2NUON3-aqoMb4TKqJIE8IIZDUtM9DuDfxHibV0HbbE",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczNTE4NTg3LCJleHAiOjE2NzM1MjkzODd9.dt1MH6NAfMJDuuXGb_ZlAPxLjyQdkW-GjZiWlmMs6sI",
 								"type": "text"
 							}
 						],
@@ -468,12 +974,39 @@
 				},
 				{
 					"name": "update poll",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"TEST CASE 1:Status code is 200\", () => {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 2:Response time is less than 500ms\", () => {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"TEST CASES 3:Response is JSON\", () => {\r",
+									"  pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 4:Poll was updated\", () => {\r",
+									"  pm.expect(pm.response.text()).to.include(\"poll updated successfully\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "PUT",
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwODQ3ODA4LCJleHAiOjE2NzA4NTE0MDh9.4Qm9xIyQwB5TbtvfskrgTyDgHh8fWJDduz5PU257FC0",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczNDQwNjM0LCJleHAiOjE2NzM0NTE0MzR9.z2waBfKOmbVCJF7VW262QlybK62TKikCzmh4xyC2lQs",
 								"type": "text"
 							}
 						],
@@ -503,12 +1036,36 @@
 				},
 				{
 					"name": "Delete poll",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"TEST CASES 1:Status code is 200\", () => {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"TEST CASES 2:Response time is less than 300ms\", () => {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"TEST CASES 3:Poll was deleted\", () => {\r",
+									"  pm.expect(pm.response.text()).to.include(\"poll delete successfully\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "DELETE",
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcwODQ3ODA4LCJleHAiOjE2NzA4NTE0MDh9.4Qm9xIyQwB5TbtvfskrgTyDgHh8fWJDduz5PU257FC0",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczNDQwNjM0LCJleHAiOjE2NzM0NTE0MzR9.z2waBfKOmbVCJF7VW262QlybK62TKikCzmh4xyC2lQs",
 								"type": "text"
 							}
 						],
@@ -534,18 +1091,40 @@
 			"item": [
 				{
 					"name": "vote count",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"TEST CASES 1:Status code is 200\", () => {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 2:Response is JSON\", () => {\r",
+									"  pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASE 3:Vote was created\", () => {\r",
+									"  pm.expect(pm.response.text()).to.include(\"vote create successfully\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNjcyMjk2MjU0LCJleHAiOjE2NzIyOTk4NTR9.65aGj9MhrUJrRt3i59p974ccGvTCoFQWj2yrii9zJsA",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjczNTE5MDczLCJleHAiOjE2NzM1Mjk4NzN9.yWSBo3rGev_v_tgi3yIy4RlpxgqB1Xa5i0OWyVk9jmw",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"optionId\":\"13\"\r\n}",
+							"raw": "{\r\n    \"optionId\":\"4\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -574,12 +1153,38 @@
 			"item": [
 				{
 					"name": "company register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"TEST CASES 1:Status code is 200\", () => {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 2:Response is JSON\", () => {\r",
+									"  pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcyNjY0MjMwLCJleHAiOjE2NzI2NzUwMzB9.40du41ozkCG9Nz4RSVAYjhDqnnKNoj4-KeNpjnDBTh0",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"companyName\":\" mk123456 pvt.ltd\",\r\n    \"email\":\"mk123456@gmail.com\",\r\n    \"address\":\"Delhi\",\r\n    \"password\":\"abc123\",\r\n    \"firstName\":\"mk\",\r\n    \"lastName\":\"singh\",\r\n    \"name\":\"carpenter\",\r\n    \"description\":\"carpenter is a person who build\"\r\n}",
+							"raw": "{\r\n    \"companyName\":\" mk1234 pvt.ltd\",\r\n    \"email\":\"rv1234@gmail.com\",\r\n    \"address\":\"Delhi\",\r\n    \"password\":\"abc123\",\r\n    \"firstName\":\"rv43\",\r\n    \"lastName\":\"singh\",\r\n    \"name\":\"carpenter1234\",\r\n    \"description\":\"carpenter is a person who build\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -608,12 +1213,33 @@
 			"item": [
 				{
 					"name": "update option",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"TEST CASES 1:Status code is 200\", () => {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 2:Response is JSON\", () => {\r",
+									"  pm.response.to.be.json;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"TEST CASES 3:Poll was updated\", () => {\r",
+									"  pm.expect(pm.response.text()).to.include(\"option updated successfully\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "PUT",
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjcxNjAwNTM5LCJleHAiOjE2NzE2MDQxMzl9.d3U1cI51APuw1SBz0NEd5Ku-2q60yQTs3lH17PlgV6U",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczNDQwNjM0LCJleHAiOjE2NzM0NTE0MzR9.z2waBfKOmbVCJF7VW262QlybK62TKikCzmh4xyC2lQs",
 								"type": "text"
 							}
 						],
@@ -644,12 +1270,32 @@
 				},
 				{
 					"name": "delete option",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"TEST CASES 1:Status code is 200\", () => {\r",
+									"  pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"TEST CASES 2:Poll was deleted\", () => {\r",
+									"  pm.expect(pm.response.text()).to.include(\"option delete successfully\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "DELETE",
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjcxNjAwNTM5LCJleHAiOjE2NzE2MDQxMzl9.d3U1cI51APuw1SBz0NEd5Ku-2q60yQTs3lH17PlgV6U",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjcyNjYzNDkxLCJleHAiOjE2NzI2NzQyOTF9.qUvJoKvCMVNUQk5aJk1CKU0ze86wwFznQ_iSzNb9Frk",
 								"type": "text"
 							}
 						],

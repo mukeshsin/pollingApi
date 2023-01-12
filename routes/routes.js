@@ -1,5 +1,4 @@
 import express from "express";
-
 //role crud operation
 import {
   createRole,
@@ -8,10 +7,8 @@ import {
   updateRole,
   deleteRole,
 } from "../controllers/role.controller.js";
-
 // user register and user login
 import { userRegister, userLogin } from "../controllers/user.controller.js";
-
 //user crud operation
 import {
   createUser,

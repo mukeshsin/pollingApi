@@ -50,9 +50,7 @@ export const validate = (req, res, next) => {
     errors: extractedErrors,
   });
 };
-
 //validateUserData by express-validator
-
 export const validateRoleData = () => {
   return [
     check("name").isLength({ min: 2 }).withMessage("name must be 5 character"),
@@ -70,7 +68,6 @@ export const valiadatePollData = () => {
       .withMessage("title must be contain atleast 8  character more"),
   ];
 };
-
 //validateOptionData
 export const validateOptionData = () => {
   return [

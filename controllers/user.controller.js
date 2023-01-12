@@ -10,7 +10,7 @@ export const userRegister = async (req, res) => {
   const salt = await bcrypt.genSalt();
   const hashedPassword = await bcrypt.hash(req.body.password, salt);
   try {
-    await User.create({
+    const user = await User.create({
       password: hashedPassword,
       firstName: req.body.firstName,
       lastName: req.body.lastName,
@@ -20,13 +20,13 @@ export const userRegister = async (req, res) => {
 
     res.status(200).send({
       message: "User register successful",
+      response: user,
     });
   } catch (error) {
     console.log(error);
     res.status(500).send(error.original.sqlMessage);
   }
 };
-
 // user Login
 export const userLogin = async (req, res) => {
   try {
@@ -34,24 +34,26 @@ export const userLogin = async (req, res) => {
     if (!email || !password) {
       res.status(401).send({ message: "please fill the information" });
     }
-    const salt = await bcrypt.genSalt();
-    const hashedPassword = await bcrypt.compare(req.body.password, salt);
     const user = await User.findOne({
       where: {
         email: email,
-        password: hashedPassword,
       },
     });
     if (!user) {
       res.status(400).json({ message: "user data not found" });
     } else {
-      return res
-        .status(200)
-        .send({ user, token: await generateToken(user.id) });
+      const isMatch = await bcrypt.compare(password, user.password);
+      if (isMatch) {
+        return res
+          .status(200)
+          .send({ user, token: await generateToken(user.id) });
+      } else {
+        res.status(401).send({ message: "password is incorrect" });
+      }
     }
   } catch (error) {
     console.log(error);
-    res.status(500).send(error.original.sqlMessage);
+    res.status(500).send({ message: "500 error to the user" });
   }
 };
 
@@ -67,7 +69,9 @@ export const createUser = async (req, res) => {
       email: req.body.email,
       roleId: req.body.roleId,
     });
-    res.status(200).send({ message: "user created successfully" });
+    res
+      .status(200)
+      .send({ message: "user created successfully", response: user });
   } catch (error) {
     console.log(error);
     res.status(500).send({ message: "500 error to the user" });
@@ -96,7 +100,7 @@ export const getUserById = async (req, res) => {
     });
     res.status(200).send(user);
   } catch (error) {
-    res.status(500).send({message:"500 error to the user"});
+    res.status(500).send({ message: "500 error to the user" });
   }
 };
 
