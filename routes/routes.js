@@ -57,7 +57,7 @@ router.delete("/role/delete/:id", deleteRole);
 
 //routes for user
 router.post("/user/register", [validateUserData(), validate], userRegister);
-router.post("/user/login", userLogin);
+router.post("/user/login",  userLogin);
 router.post(
   "/user/create",
   validateJwtToken,

@@ -70,7 +70,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"{{$randomJobTitle}}\",\r\n    \"description\":\"{{$randomJobTitle}}\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Hr\",\r\n    \"description\":\"Human resources (HR) is the division of a business responsible for finding, screening, recruiting, and training job applicants.\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -78,14 +78,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/{{endpoint}}",
+							"raw": "http://localhost:3000/role/add",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"{{endpoint}}"
+								"role",
+								"add"
 							]
 						}
 					},
@@ -271,7 +272,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/role/delete/8",
+							"raw": "http://localhost:3000/role/delete/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -280,7 +281,7 @@
 							"path": [
 								"role",
 								"delete",
-								"8"
+								"5"
 							]
 						}
 					},
@@ -307,8 +308,8 @@
 									"    pm.expect(data.message).to.eql(\"User register successful\");\r",
 									"});\r",
 									"\r",
-									"pm.test(\"TEST CASES 3:Response time is less than 350ms\", () => {\r",
-									"  pm.expect(pm.response.responseTime).to.be.below(350);\r",
+									"pm.test(\"TEST CASES 3:Response time is less than 450ms\", () => {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(450);\r",
 									"});\r",
 									""
 								],
@@ -321,7 +322,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"password\":\"{{$randomPassword}}\",\r\n    \"firstName\":\"{{$randomFirstName}}\",\r\n    \"lastName\":\"{{$randomLastName}}\",\r\n    \"email\":\"{{$randomEmail}}\",\r\n    \"roleId\":\"{{$randomInt}}\"\r\n}",
+							"raw": "{\r\n    \"password\":\"inno@2020\",\r\n    \"firstName\":\"karan\",\r\n    \"lastName\":\"singh\",\r\n    \"email\":\"karansingh1@gmail.com\",\r\n    \"roleId\":\"2\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -329,14 +330,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/{{my_variable}}",
+							"raw": "http://localhost:3000/user/register",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"{{my_variable}}"
+								"user",
+								"register"
 							]
 						}
 					},
@@ -349,14 +351,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"\r",
-									"pm.test(\"TEST CASES 1:User login success\", function () {\r",
-									"  pm.request.body = JSON.stringify({\r",
-									"    email: \"user@example.com\",\r",
-									"    password: \"password\",\r",
-									"  });\r",
-									"\r",
-									"  pm.sendRequest(function (response) {\r",
+									"pm.sendRequest(function (response) {\r",
 									"    // Assert that the response status code is 200\r",
 									"    pm.response.to.have.status(200);\r",
 									"\r",
@@ -365,7 +360,7 @@
 									"    pm.expect(json).to.have.property(\"user\");\r",
 									"    pm.expect(json).to.have.property(\"token\");\r",
 									"  });\r",
-									"});\r",
+									"\r",
 									"\r",
 									"\r",
 									"pm.test(\"TEST CASES 2:Response time is less than 400ms\", () => {\r",
@@ -382,7 +377,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\":\"amitsingh1@gmail.com\",\r\n    \"password\":\"inno2020\"\r\n}\r\n",
+							"raw": "{\r\n    \"email\":\"amitkumar1@gmail.com\",\r\n    \"password\":\"inno@2020\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -501,7 +496,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczNDQwNjM0LCJleHAiOjE2NzM0NTE0MzR9.z2waBfKOmbVCJF7VW262QlybK62TKikCzmh4xyC2lQs",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczNTE4NTg3LCJleHAiOjE2NzM1MjkzODd9.dt1MH6NAfMJDuuXGb_ZlAPxLjyQdkW-GjZiWlmMs6sI",
 								"type": "text"
 							}
 						],
@@ -569,7 +564,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczNDQwNjM0LCJleHAiOjE2NzM0NTE0MzR9.z2waBfKOmbVCJF7VW262QlybK62TKikCzmh4xyC2lQs",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczNTE4NTg3LCJleHAiOjE2NzM1MjkzODd9.dt1MH6NAfMJDuuXGb_ZlAPxLjyQdkW-GjZiWlmMs6sI",
 								"type": "text"
 							}
 						],
@@ -620,7 +615,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczNDQwNjM0LCJleHAiOjE2NzM0NTE0MzR9.z2waBfKOmbVCJF7VW262QlybK62TKikCzmh4xyC2lQs",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczNTE4NTg3LCJleHAiOjE2NzM1MjkzODd9.dt1MH6NAfMJDuuXGb_ZlAPxLjyQdkW-GjZiWlmMs6sI",
 								"type": "text"
 							}
 						],
@@ -685,7 +680,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczNDQwNjM0LCJleHAiOjE2NzM0NTE0MzR9.z2waBfKOmbVCJF7VW262QlybK62TKikCzmh4xyC2lQs",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczNTE4NTg3LCJleHAiOjE2NzM1MjkzODd9.dt1MH6NAfMJDuuXGb_ZlAPxLjyQdkW-GjZiWlmMs6sI",
 								"type": "text"
 							}
 						],
@@ -805,13 +800,13 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczNDQwNjM0LCJleHAiOjE2NzM0NTE0MzR9.z2waBfKOmbVCJF7VW262QlybK62TKikCzmh4xyC2lQs",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczNTE4NTg3LCJleHAiOjE2NzM1MjkzODd9.dt1MH6NAfMJDuuXGb_ZlAPxLjyQdkW-GjZiWlmMs6sI",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\":\"Which one is your favourite  food?\",\r\n  \"options\":[\r\n      {\r\n        \"optionTitle\":\"matarpaneer\"\r\n      },{\r\n          \"optionTitle\":\"rajma chawal\"\r\n      },{\r\n          \"optionTitle\":\"briyani\"\r\n      }\r\n      \r\n  ],\r\n  \"pollId\":1\r\n}",
+							"raw": "{\r\n    \"title\":\"Which one is your favourite  junk food?\",\r\n  \"options\":[\r\n      {\r\n        \"optionTitle\":\"momo\"\r\n      },{\r\n          \"optionTitle\":\"fries\"\r\n      },{\r\n          \"optionTitle\":\"pizza\"\r\n      }\r\n      \r\n  ],\r\n  \"pollId\":2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -886,7 +881,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczNDQwNjM0LCJleHAiOjE2NzM0NTE0MzR9.z2waBfKOmbVCJF7VW262QlybK62TKikCzmh4xyC2lQs",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczNTE4NTg3LCJleHAiOjE2NzM1MjkzODd9.dt1MH6NAfMJDuuXGb_ZlAPxLjyQdkW-GjZiWlmMs6sI",
 								"type": "text"
 							}
 						],
@@ -958,7 +953,7 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczNDQwNjM0LCJleHAiOjE2NzM0NTE0MzR9.z2waBfKOmbVCJF7VW262QlybK62TKikCzmh4xyC2lQs",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczNTE4NTg3LCJleHAiOjE2NzM1MjkzODd9.dt1MH6NAfMJDuuXGb_ZlAPxLjyQdkW-GjZiWlmMs6sI",
 								"type": "text"
 							}
 						],
@@ -1123,13 +1118,13 @@
 						"header": [
 							{
 								"key": "token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjczNDQwNjM0LCJleHAiOjE2NzM0NTE0MzR9.z2waBfKOmbVCJF7VW262QlybK62TKikCzmh4xyC2lQs",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjczNTE5MDczLCJleHAiOjE2NzM1Mjk4NzN9.yWSBo3rGev_v_tgi3yIy4RlpxgqB1Xa5i0OWyVk9jmw",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"optionId\":\"1\"\r\n}",
+							"raw": "{\r\n    \"optionId\":\"4\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
